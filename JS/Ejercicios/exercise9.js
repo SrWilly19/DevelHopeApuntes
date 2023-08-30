@@ -12,10 +12,11 @@ const examsCompleted = 10;
 const firstYearCompleted = true;
 const yearsCompleted = 1;
 
+//Hacemos la comprobacion imprimiendo por pantalla con "console.log()"
 console.log(name == lastname) //false
-age <= average //true
-firstYearCompleted == lastname //false
-yearsCompleted == firstYearCompleted //true
-firstYearCompleted === yearsCompleted  //false
-examsCompleted < age //true
-isGraduated > yearsCompleted //false
+console.log(age <= average) //true
+console.log(firstYearCompleted == lastname) //false
+console.log(yearsCompleted == firstYearCompleted) //true
+console.log(firstYearCompleted === yearsCompleted)  //false
+console.log(examsCompleted < age) //true
+console.log(isGraduated > yearsCompleted) //false
