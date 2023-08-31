@@ -11,6 +11,7 @@ false === 0
 4 >= 8
 */
 // Utilizamos el console.log para imprimir por pantalla y verificar el resultado.
+
 console.log(10 < 11)
 console.log(45 == 45)
 console.log(true === true)

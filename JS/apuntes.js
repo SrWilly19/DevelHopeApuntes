@@ -239,3 +239,21 @@ if(!valorBooleano){
     console.log("TRUE");
 }
 
+// AND (&&)
+
+//              TRUE        FALSE
+
+//  TRUE        TRUE        FALSE
+
+//  FALSE       FALSE       FALSE
+
+
+// OR (||)
+
+//              TRUE        FALSE    
+
+//  TRUE        TRUE        TRUE 
+
+//  FALSE       TRUE        FALSE  
+
+//Este lo veremos menos (XOR)
