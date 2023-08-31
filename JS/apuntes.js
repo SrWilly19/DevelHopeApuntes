@@ -257,3 +257,109 @@ if(!valorBooleano){
 //  FALSE       TRUE        FALSE  
 
 //Este lo veremos menos (XOR)
+
+//Empezamos con los if!!!!
+
+const edadCon = 20;
+/*
+if(edad>=19){
+    console.log("Es mayor de edad");
+}else{
+    console.log("Es menor de edad");
+}*/
+                            //Este es negativo        Este es positivo
+const mensaje = (edad >= 18) ? "2: Es mayor de edad" : "2: es menor de edad"
+console.log(mensaje);
+
+const nume = 10;
+let mensaj;
+
+if (nume === 0){
+    mensaje = "igual a 0";
+}else if(nume > 0 && nume < 10){
+    mensaje = "entre 1 y 9";
+}else if(nume >= 10 && nume < 20){
+    mensaje = "entre 10 y 19 ";
+}else{
+    mensaje = "el resto";
+}
+
+const mensaj2 = 
+    nume === 0
+    ? "igual a 0"
+    : nume > 0 && nume < 10
+    ? "entre 1 y 9"
+    :nume >= 10 && nume < 20
+    ? "entre 10 y 19"
+    : "el resto";
+
+
+const age  = 25;
+
+const resultadoEdad = 
+    (age<13 && age >= 0 ) 
+        ? "no es un nen" 
+    : (age >= 13 && age < 18) 
+    ? "Es un adolescente" 
+    : (age >= 18 ) 
+    ? "Es mayor de edad" 
+    : "es adulto";
+
+// La diferencia entre utilizar el terniario y el if, cuando creamos el terniario tenemos que poner en consta ya que no cambia despues, se guarda cuando se crea en la variable.
+// En el if si que tendremos que crear con let una variable para ir asignandole el resultado que queremos ver.
+
+const comida = "pizza";
+//Va pasando por cada caso comparando donde debe entrar y cunado entra hace lo que tendamos de codigo dentro y despues con el break hacemos que salga de la comparacion.
+//Break es fundamental que lo tengamos puesto.
+switch(comida){
+    case "Pizza":
+        console.log("Es una comida poco saludable");
+        break;
+    case "Hamburguesa":
+        console.log("Es una comida rapida");
+        break;
+    //Si no le ponemos nada dentro se evaluaran en el siguiente bloque donde tenemos el break.
+    case "Ensalada":
+    case "Frutas":
+        console.log("Es una comida saludable");
+        break;
+    default: 
+    console.log("No es ninguna de las opciones.")
+}
+
+if(comida === "Pizza"){
+    console.log("Es una comida poco saludable")
+}else if(comida === "hamburguesa"){
+    console.log("Comida rapida");
+}else if(comida === "Ensalada" || comida === "Frutas"){
+    console.log("Es una comida saludable");
+}else{
+    console.log("No es ninguna de las opciones.");
+}
+
+const calificacion = 91;
+
+//Validara si es true cuando entra en el primer caso, es decir lo vera con el primer caso.
+
+switch (true) {
+    case calificacion >= 90:
+        console.log("A")
+        break;
+    case calificacion >= 80:
+        console.log("B")
+        break;
+    case calificacion >= 70:
+        console.log("C")
+        break;
+    case calificacion >= 60:
+        console.log("D")
+        break;
+    default:
+         console.log("F")
+        break;
+}
+
+//Se puede hacer con el ternario asignandolo dentro del console.log, no es necesario crear variables. Ya que las variables ocupan un espacio en la memoria
+//y de esta manera no almacenamos en nada.
+
+console.log(calificacion === true ? "A" : "F");
