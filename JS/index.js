@@ -11,3 +11,7 @@ let trueString = "true";
 let falsevalue = false; 
 console.log(Boolean(0));
 
+for(let i = 0; i < 3; i++){
+    console.log(i);
+}
+

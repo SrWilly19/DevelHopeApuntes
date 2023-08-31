@@ -310,7 +310,7 @@ const resultadoEdad =
 
 const comida = "pizza";
 //Va pasando por cada caso comparando donde debe entrar y cunado entra hace lo que tendamos de codigo dentro y despues con el break hacemos que salga de la comparacion.
-//Break es fundamental que lo tengamos puesto.
+//Break es fundamental que lo tengamos puesto en cada caso  ya que si no el codigo pasara al siguiente caso y no parara.
 switch(comida){
     case "Pizza":
         console.log("Es una comida poco saludable");
@@ -324,7 +324,8 @@ switch(comida){
         console.log("Es una comida saludable");
         break;
     default: 
-    console.log("No es ninguna de las opciones.")
+        console.log("No es ninguna de las opciones.")
+        break;
 }
 
 if(comida === "Pizza"){
@@ -360,6 +361,20 @@ switch (true) {
 }
 
 //Se puede hacer con el ternario asignandolo dentro del console.log, no es necesario crear variables. Ya que las variables ocupan un espacio en la memoria
-//y de esta manera no almacenamos en nada.
+//y de esta manera no lo almacenamos en ninguna variable
 
 console.log(calificacion === true ? "A" : "F");
+
+//Bucles for y while (loops)
+
+//Sintaxis del for:  for(initialize our iterator; set our stopping condition; update our iterator)
+//for loop
+for(let i = 0; i < 3; i++){
+    console.log(i);
+}
+console.log("End of loop!" + i);
+//0
+//1
+//2
+
+//while loop
