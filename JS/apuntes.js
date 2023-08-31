@@ -369,10 +369,11 @@ console.log(calificacion === true ? "A" : "F");
 
 //Sintaxis del for:  for(initialize our iterator; set our stopping condition; update our iterator)
 //for loop
-for(let i = 0; i < 3; i++){
+let i;
+for(i = 0; i < 3; i++){
     console.log(i);
 }
-console.log("End of loop!" + i);
+console.log("End of loop!" + i); // Dara error, porque no hemos inicializado la variable fuera del loop. Si la iniciamos dentro solo la podremos utilizar dentro del loop.
 //0
 //1
 //2
