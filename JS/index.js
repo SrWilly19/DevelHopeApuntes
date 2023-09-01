@@ -15,3 +15,16 @@ for(let i = 0; i < 3; i++){
     console.log(i);
 }
 
+for(let i = 0; i < 4; i++){
+    for(let j = 0; j < 4; j++){
+        console.log("i:" , i + " " + "j: " + j)
+    }
+}
+
+for(let i = 0; i < 4; i++){
+    for(let j = 0; j < 4; j++){
+        for(let k = 0; k < 4; k++){
+            console.log("i:" , i + " " + "j: " + j + " " + "k: " + k) 
+        }
+    }
+}

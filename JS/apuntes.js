@@ -369,13 +369,85 @@ console.log(calificacion === true ? "A" : "F");
 
 //Sintaxis del for:  for(initialize our iterator; set our stopping condition; update our iterator)
 //for loop
-let i;
-for(i = 0; i < 3; i++){
+
+for(let i = 0; i < 3; i++){ // Queremos que la variable muera en el bucle
     console.log(i);
 }
-console.log("End of loop!" + i); // Dara error, porque no hemos inicializado la variable fuera del loop. Si la iniciamos dentro solo la podremos utilizar dentro del loop.
+console.log("End of loop!" + i); // Queremos que la variable muera en el bucle
 //0
 //1
 //2
 
+let suma = 0;
+
+for (let i = 1; i <= 10; i++){
+    suma += i;  //Esta linea y la de abajo tienen el mismo significado.
+    //suma = suma +i;
+}
+
+ let text = "hola";
+
+ for(let i = 0; i < text.length; i++){
+    console.log(text[i]);
+ }
+
+
+ const numer = 5;
+
+ for (let i = 0; i <= 10; i++){
+    console.log(numero + "x" + i + " = " + (numer * i));
+ }
+
+ //Los ciclos pueden ir para delante y para atras
+
+ for(let i = 10; i > 10; i--){
+    console.log(i);
+ }
+
 //while loop
+let i = 0;
+while (i<5) {
+    console.log(i);
+    i++;
+}
+
+//Do while
+
+do{
+    console.log("Se ejecuta aunque no se cumpla")
+    i++;
+}
+while(i != 22)
+
+let numerico = 2;
+
+while(numerico <= 10){
+    console.log(numerico);
+    numerico += 2;
+}
+
+while(numerico <= 10){
+    if(numerico%2 == 0){
+        console.log(numerico);
+    }
+    numero += 1;
+}
+
+for (let i = 0; i <= 10; i++){
+    if(i % 2 != 0){
+        console.log(i);
+    }
+}
+
+for(let i = 0; i < 4; i++){
+    for(let j = 0; j < 4; j++){
+        console.log("i:" , i + " " + "j: " + j)
+    }
+}
+for(let i = 0; i < 4; i++){
+    for(let j = 0; j < 4; j++){
+        for(let k = 0; k < 4; k++){
+            console.log("i:" , i + " " + "j: " + j + "k: " + k) 
+        }
+    }
+}
