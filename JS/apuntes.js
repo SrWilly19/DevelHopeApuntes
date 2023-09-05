@@ -230,6 +230,16 @@ if(valorBooleano === otroValorBooleano){
     console.log("false")
 }
 
+
+/*Todos los siguientes valores se evaluan como falsos:
+false
+null
+undefined
+0
+-0
+NaN
+An empty string ('')
+*/ 
 let valorTexto1 = "a";
 let valorBooleano1 = Boolean(valorTexto1);
 
@@ -450,4 +460,280 @@ for(let i = 0; i < 4; i++){
             console.log("i:" , i + " " + "j: " + j + "k: " + k) 
         }
     }
+}
+
+//Funciones (functions)
+//method anbd function
+console.log("print");
+
+//types of functions                    (tipos de funciones)
+//Returns output                        (devuelven la salida)
+//performs operations without output.   (realiza operaciones sin salida)
+//declaracion
+//function func(arg1, arg2, arg3, arg4){};
+
+function nameOfMyFunction(arg1, arg2){
+    //bloque de codigo
+    let sum = arg1 + arg2;
+    return sum;
+}
+
+let output = nameOfMyFunction(2, 3);
+console.log(output);
+
+//No tiene resultado de salida, solo imprime una palabra
+function sayHello(){
+    //bloque de codigo
+    console.log("Hello!");
+} 
+sayHello();
+
+//console.log(typeof(sayHello));  Devolvera el tipo que es "function", 
+//sin poner los parentesis con los argumentos
+//Una de las caracteristicas mas particulares de las funciones es que
+//podemos declararlas mas tarde (linea 492) y utilizarlas antes (linea 400)
+//lo llamamos elevacion
+
+//Puedo llamar a la función usando una referencia a esa funcion
+let func = sayHello;
+func();
+
+
+newFunc("some string")
+//function expression, es cuando creamos una funcion dentro de algun 
+//tipo de expresioon matematica.
+//cuando utilizamos una function expression, solo podemos llamarla
+//despues de declarar la funcion.
+let newFunc = function(arg1){
+    console.log("added" + arg1);
+}
+newFunc("some string");
+
+const miFunction = (arg1, arg2) =>{
+    return arg1 + arg2;
+}
+
+// para hacer la funcion flecha sin necesidad del return, solo se
+//puede hacer una operacion.
+
+const funcionFlecha = (arg1, arg2) => arg1 + arg2;
+
+console.log(funcionFlecha(1,3));
+ 
+
+//Si queremos que una funcion se ejecute al iniciar el codigo
+//debemos hacerlo asi, incluso llamar a otra funcion
+(()=>{
+    const mensaje = "Hola desde una IIFE";
+})();
+
+
+function pares(limSup, limInf ){
+    suma = 0;
+    for (let i = limInf; i <= limSup; i++){
+        if(i % 2 == 0){
+            suma += i;
+        }
+    }
+    return suma;     
+}
+
+console.log(pares(1, 10));
+
+//Si hacemos sin flech la podemos utilizar cuando queramos, si la hacemos con flecha 
+//solo podremos utilizarla despues de que se cree.
+
+const funcionFlechaImpar = (arg1, arg2) => {
+    suma = 0;
+    for (let i = limInf; i <= limSup; i++){
+        //Tendremos que poner el simbolo exclamacion para elegir cualquier numero
+        //que no sea 0 ya que no sera par.
+        if(i % 2 != 0){
+            suma += i;
+        }
+    }
+    return suma;
+}
+
+//Callbacks
+function callBacks(num1, num2, callback){
+    const resultado = num1 + num2;
+    callback(resultado); 
+}
+
+function mostrarResultado(resultado){
+    console.log("El resultado es: " + resultado);
+}
+
+function mostrarResultadoDividoDos(resultado){
+    console.log("El resultado es: " + resultado);
+}
+
+callBacks(5, 3, mostrarResultadoDividoDos);    // 4
+callBacks(5, 3, mostrarResultado);   //  8
+
+
+//Esta la podriamos hacer con la funcion flecha que solo tenemos una linea.
+function sumaParImpar(arg2, arg1, callback){
+    return callback(arg1, arg2);
+}
+
+const sumaParImpar2(arg1, arg2, callback) => callback(arg1, arg2);
+
+const par = sumaParImpar(1, 10, pares);
+console.log(par);
+
+
+
+//Objetos 
+let obj = {
+    "key":"value",
+    "numbr":2
+}
+//Puedo acceder a los datos de estas dos maneras, con [] y la clave
+console.log(obj["key"]);
+//o utilizando el . seguido de la clave.
+console.log(obj.numbr);
+
+//Podemos cambiar el valor de algun dato que tengamos dentro del objeto,
+//vamos hacerlo con el 2 solo debemos declararlo y cambiar el dato que tendra
+obj["numbr"] = 7;
+//Ahora el dato de numbr ya no sera 2 si no 7.
+
+let persona = {
+    nombre: "juan",
+    edad: 30,
+    ciudad:"ciudad 1"
+}
+
+for (const key in persona) {
+    console.log(key + " " + persona[key]);
+}
+
+//Iterar sobre las claves del objeto.
+const keys = Object.keys(persona);
+console.log(keys);
+
+
+//Iterar con el valor.
+const values = Object.values(persona);
+for(const value of values){
+    console.log(value);
+}
+
+//iterar sobre pares clave-valor.
+const entries = Object.entries(persona);
+console.log(entries);
+
+for(lety[key, value] of entries){
+    console.log(keys + " : " + value);
+}
+
+const propertyNames = Object.getOwnPropertyNames(persona);
+console.log(propertyNames);
+ 
+//Lo  utilizamos para ver los valores que tenmos en el objeto persona.
+for(const propertyName of propertyNames){
+    console.log(propertyName + " : " + persona[propertyName]);
+}
+//For in iterar en objetos. Entra en todo el objeto
+//For of cuando lo utiulizamos sacando los datos como array,
+//puedes elegir que datos quieres sacar.
+
+
+const propiedadesDeseadas = ["nombre", "edad"];
+//For of cuando es un array
+for (const propiedad of propiedadesDeseadas) {
+    console.log(propiedad + " : " + persona[propiedad]);
+}
+
+persona.ciudad = "Madrid";
+persona.edad  += 5;
+
+//Asi podemos eliminar un dato del objeto.
+delete persona.edad;
+//Asi añadimos un dato, no necesitamos eliminar nada
+persona.apellido = "Perez"
+
+persona.apellido = {}; //Hemos creado un dato vacio.
+//Los datos añadidos se pondran al final si quisieramos 
+//que aparezca en otro lado, tendremos que ordenarla.
+
+function funcionOne(params){
+    params = 88;
+    console.log(params + " Dentro de la funcion")
+}
+
+let params = 10;
+funcionOne(params);
+console.log(params + " Fuera de la funcion")
+
+
+function funcionTwo(persona){
+    persona.edad = 88;
+    console.log(persona.edad + " Dentro de la funcion")
+}
+
+funcionTwo(persona);
+console.log(persona.edad + " Fuera de la funcion");
+
+funcionthree(persona){
+    persona2 = {... persona}; //split operator 
+    persona2.edad = 88;
+    console.log(persona.edad + " dentro de la fuincion");
+}
+
+funcionthree(persona)
+
+//Si queremos declarar algo pero estara vacio desde el principio pondremos un null para tener un dato vacio
+let  producto = {
+    nombre: "camisa",
+    edad: 25,
+    cantidad: 10,
+    detalle: null
+}
+
+for(const key in product){
+    console.log(key + " : " + producto[key]);
+}
+
+producto.precio = producto.precio * 2;
+
+function duplicarPrecio(x){
+    x.precio *= 2;
+}
+duplicarPrecio(producto);
+
+/* de esta manera se puede crear pero no esta bien visto
+se utiliza mas para cambiar los datos desde fuera.
+producto.nomrbe = "camisa";
+producto.precio = 2;
+producto.cantidad = 10;*/
+
+
+//Values and reference
+//Nuestro objeto no apunta a valores especificos.
+
+let obj = {
+    "key": "value",
+    "number": 10,
+    "func":(arg) => arg + 2,
+    "obj": {
+        "key": 2
+    }
+}
+
+//Funcion para cambiar el valor de un objeto, les damos los parametros obj (objeto), key(palabra clave, el que queramos cambiar)
+//val (valor que queremos que aparezca)
+function changeValue(obj, key, val){
+    //Cambiamos un valor del objeto en este caso es el valor del parametro key.
+    obj[key] = val;
+}
+
+//Para poder utilizar esto tenemos que llamar a la funcion, 
+changeValue(obj, "number", 15);
+
+//Si queremos hacerlo igual pero para un numero
+function changeNumber (num){
+    num += 5;
 }
