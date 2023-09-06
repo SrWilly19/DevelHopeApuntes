@@ -542,7 +542,6 @@ console.log(pares(1, 10));
 
 //Si hacemos sin flech la podemos utilizar cuando queramos, si la hacemos con flecha 
 //solo podremos utilizarla despues de que se cree.
-
 const funcionFlechaImpar = (arg1, arg2) => {
     suma = 0;
     for (let i = limInf; i <= limSup; i++){
@@ -737,3 +736,145 @@ changeValue(obj, "number", 15);
 function changeNumber (num){
     num += 5;
 }
+
+//Mas objetos
+//Funciones objetos
+
+const persona = {
+    nombre : "Michel",
+    edad: 34,
+    ciudad: "Torino",
+    presentarse: function(){
+        //Ponemos this por que el dato esta fuera de la funcion pero dentro de nuestro objeto
+        console.log(`Hola, soy ${this.nombre}, tengo: ${this.edad} y vivo en ${this.ciudad}`);
+        //Tambien podmeos hacerlo asi  console.log(`Hola, soy` + this.nombre + `tengo:`  + this.edad +  `y vivo en` this.ciudad);
+        //Estas comillas `` se utilizan para poner variables dentro
+    }
+}
+
+persona.presentarse();
+
+const calculadora = {
+    sumar : function(a,b){
+        return a + b;
+    },
+    restar: function(a,b){
+        return a-b;
+    },
+    multiplicar: function(a,b){
+        return a*b;
+    },
+    dividir: function(a,b){
+        return a/b;
+    }
+} 
+
+console.log(calculador.restar(1,8));
+
+
+//Funciones de constructor, utilizamos una palabra cable
+//Se llama funcion constructor ya que se utiliza para crear objetos con los parametros que hemos utilizado.ç
+//tenemos que pasarle los datos cuando creamos una nueva persona en nuestro caso.
+function persona(nombre, edad, ciudad){
+    this.nombre = nombre;
+    this.edad = edad;
+    this.ciudad = ciudad
+
+    this.presentarse= function(){
+        console.log(`Hola, soy ${this.nombre}, tengo: ${this.edad} y vivo en ${this.ciudad}`);
+    }
+}
+//De esta manera creamos a los objetos con los datos que nosotros queremos.
+//Todos los que creemos y guardemos seran objetos
+const persona1 = new persona("Andres", 20, "Milano")
+
+//Practica
+function  Producto(nombre, precio){
+    this.nombre = nombre;
+    this.precio = precio;
+    this.calcularPrecioTotal = function(cantidad){
+        return this.precio * cantidad;
+    }
+}
+//creamos nuestro producto con los valores que quermos darle, de nombre y precio
+const producto1 = new Producto("camiseta", 20);
+
+//para realizar la funcion dentro del objeto tendremos que poner el producto1 seguido de la funcion mas la cantidad de camisetas que queremis calcular
+console.log(producto1.calcularPrecioTotal(3));
+
+const coche = {
+    marca: "toyota",
+    modelo:"Corolla",
+    //Objeto dentro de un objeto, podemos meter mas de uno,
+    motor:{
+        cilindros: 4,
+        potencia: "99hp"
+    }
+}
+//Para acceder a cada objeto solo tendremos que por un . para cada vez que entremos mas en un objeto.
+console.log(coche.motor.potencia);
+
+const casa = {
+    direccion: "Siempre viva",
+    habitaciones: {
+        dormitorio:{
+            camas:2,
+            armario: 1
+        },
+        cocina:{
+            electrodomesticos: ["nevera", "horno", "microondas"]
+        },
+        sala:{
+          sofas: 2,
+          tv: true  
+        }
+    }
+}
+
+//De esta manera entramos a todas las partes de la casa
+console.log(casa);
+console.log(casa.habitaciones);
+console.log(casa.habitaciones.dormitorio);
+console.log(casa.habitaciones.cocina);
+console.log(casa.habitaciones.sala);
+
+const persona = {
+    nombre: "juan",
+    edad: 40,
+    ciudad: "Caracas"
+}
+
+//Primero las convertimos en un objeto para que sea iterable
+//si vamos a coger algun dato en especial. 
+//Hacer cosas con los datos que tenemos dentro del objeto con sus propiedades.
+const keyse = Object.keys(persona)
+console.log(keyse);
+for(const key of keyse){
+    console.log(persona[key])
+}
+
+//iterar un objeto de forma automatica con for in
+//sin necesidad de hacer nada mas
+for(let key in persona){
+    console.log(persona[key])
+}
+
+
+const ciculoObjeto = {
+    radio: 5,
+    calcularArea: function(){
+        return Math.PI * this.radio * this.radio;
+    }    
+}
+
+console.log("EL area del circulo es", circulo.calcularArea());
+
+function circuloFuncion(radio){
+    this.radio = radio;
+    this.calcularArea =  function(){
+        return Math.PI * this.radio * this.radio;
+    }   
+}
+
+const circulo1 = new circuloFuncion(5);
+console.log(circulo1.calcularArea);
