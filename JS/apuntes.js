@@ -554,6 +554,35 @@ const funcionFlechaImpar = (arg1, arg2) => {
     return suma;
 }
 
+//Variables Scope
+//global scope
+//Esta variable sera accesible en cualquier lugar de nuestro alcance.
+let something = 5;
+console.log(something);
+//Incluso haciendo un If, tengo acceso a esta varibale.
+if(true){
+    //block scope
+    console.log(something);
+}
+//Incluso en una funcion ya que hemos declarado la variable desde el alcance global
+//Podre acceder a ella desde cualquier lado
+function func(){
+    //function scope
+    //var something = 10; Con var tendremos acceso a la variable desde fuera tambien, se 
+    //coloca en nuestro global asi que nos cambiara el valor de la varibale en todas partes
+    //del archivo.
+    //Let something = 10; Esta variable solo existe en el alcance del bloque y luego
+    //desaparece
+    //Con esto de abajo solo estara disponibole dentro del alcance de mi funcion.
+    //this.something = 10; Estoy cambiando esta variable pero solo en el contexto
+    //de mi funcion
+    console.log(something);
+}
+//Esto lo utilizamos para hacer referencia a la variable que tendremos dentro de nuestro 
+//bloque de codigo.
+//Apuntara a donde sea que este ubicado en ese momento.
+this;
+
 //Callbacks
 function callBacks(num1, num2, callback){
     const resultado = num1 + num2;
