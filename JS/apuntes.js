@@ -649,6 +649,37 @@ for(const value of values){
     console.log(value);
 }
 
+//Funcion assing la utilizamos para combinar varios objetos o para crear uno nuevo con los valores de los anteriores
+const target = { 
+    a: 1, 
+    b: 2 
+};
+const source = { 
+    b: 4, 
+    c: 5 
+};
+ //Se cogen los dos objetos y se combinan en uno nuevo.
+ //Si quisieramos crear uno nuevo con los valores debemos ponerlo asi "let newUser = Object.assign({},user);"
+const returnedTarget = Object.assign(target, source);
+
+console.log(target);
+// Expected output: Object { a: 1, b: 4, c: 5 }
+
+console.log(returnedTarget === target);
+// Expected output: true
+
+//Si queremos que nuestro objeto conserve todos estos valores no podemos utilizar solo la palabra const porque no hara lo que queremos
+//si podremos modificarlo. Debemos utilizar .freeze(objeto que queremos congelar) para congelar el objeto y que no podamos modificar nada.
+const obj = {
+    "key": "value",
+    "number": 10,
+    "func": (arg) => arg + 2,
+    "obj": {
+        "key": 2
+    }  
+}
+
+
 //iterar sobre pares clave-valor.
 const entries = Object.entries(persona);
 console.log(entries);
