@@ -907,3 +907,146 @@ function circuloFuncion(radio){
 
 const circulo1 = new circuloFuncion(5);
 console.log(circulo1.calcularArea);
+
+
+//Arrays (siempre se empieza en la posicion 0)
+let miArray = [1, 2, 3, 4, 5];
+let palabras = ["manzana", "banana", "cereza"]
+
+console.log(miArray[2])
+
+for (let i = 0; i < miArray.length; i++) {
+    console.log("Numero: " + miArry[i] + " posicion: " + i) 
+}
+
+
+//Agregar elementos al final de un array
+let miArrayAgregar =[5, 2, 3];
+miArrayAgregar.push(4, 5);
+console.log(miArray)
+
+//Eliminar el uiltimo elemento del array
+miArrayAgregar.pop();
+
+//Agregar elementos al principio del array
+miArrayAgregar.unshift(0);
+
+//Eliminar el primer elemento del array
+miArrayAgregar.shift();
+
+//Combinar dos arrays
+let miArrayCombi = [1, 2];
+let miArrayCombi2 = [3, 4];
+let combinado = miArrayCombi.concat(miArrayCombi2);
+console.log(combinado);
+
+//Copiar una porcion del array
+let miArrayCopia = [1, 2, 3, 4, 5];
+//Empieza en la posicion 1 pero no llega a la poscion 4. 
+let copia = miArrayCopia.slice(1, 4); 
+
+//Eliminar elementos de un array
+let miArrayEliminar = [1, 2, 3, 4, 5];
+//Primer elemento donde inicia a eliminar, el segundo es la cantidad de elementos que queremos eliminar de la lista
+miArrayEliminar.splice(2, 2);
+
+//Convertir un array en una cadena de texto.
+let miArrayaTexto = ["Hola", "Mundo"];
+let cadena = miArrayaTexto.join(" ");
+console.log(cadena);
+
+//Iterar un array no tienes acceso a la poscion de los elementos.
+let miArrayIterar = [1, 2, 3];
+miArrayIterar.forEach(function(elemento){
+    console.log(elemento)
+})
+
+
+//Duplicar todos los elementos de un array
+let miArrayDuplicar = [1, 2, 3, 4];
+//Va mirando las posiciones de cada uno y las va copiando y multiplicando.
+let duplicados = miArrayDuplicar.map(function(elemento){
+    return elemento * 2;
+}) 
+console.log(duplicados);
+
+//Filtrar elementos (mayores que 3 en este caso)
+let miArrayFiltro = [1, 2, 3, 4, 5];
+let filtrados = miArrayFiltro.filter(function(elemento){
+    return elemento > 3;
+})
+console.log(filtrados);
+
+//Sumar todos los elementos de un array, tipica pregunta de entrevista. EL reduce solo devuelve un elemento.
+let miArraySumar = [1, 2, 3, 4, 5];
+let sumaArray = miArraySumar.reduce(function(acumulador, elemento){
+    return acumulador + elemento;
+}) 
+
+//Ordenar un array alfabeticament
+let miArrayOrdenar = ["m", "b", "c", "d"];
+miArrayOrdenar.sort();
+console.log(miArrayOrdenar);
+
+//Invertir el orden 
+let miArrayInveritida = [1, 2, 3, 4, 5];
+miArrayInveritida.reverse();
+console.log(miArrayInveritida)
+
+//Verificar si se cumple una condicion
+let miArrayCondicion = [2, 4, 6, 7, 10];
+let sonTodosPares = miArrayCondicion.every(function(elemento){
+    return elemento % 2 == 0;
+})
+console.log(sonTodosPares);
+
+//Mirar si en algun lugar del array se cumple la condicion
+let miArrayAlgunLugar = [1, 2, 4, 5]
+miArrayAlgunLugar.some
+
+//Obtener elementos n de un array
+let miArrayObtener = [1, 2, 3, 4, 5];
+let primerosTres = miArrayObtener.slice(0, 3);
+console.log(primerosTres);
+
+//Devuelve el primer elemento que cumple esa condicion
+let miArrayUnoSolo = [1, 2, 3, 4, 5];
+let multiploDeTres = miArray.find(function(elemento){
+    return elemento % 3 == 0;
+})
+console.log(multiploDeTres)
+
+//Comparar la altura de las personas y seleccionar la altura mas alta.
+let personas =[
+    {nombre : "a", altura: 160},
+    {nombre: "b", altura: 175},
+    {nombre: "c", altura: 170}
+]
+let masAlto = personas.reduce(function(max, persona){
+    return (persona.altura > max.altura)? persona : max;
+})
+console.log(masAlto);
+
+//Una dimension
+[0, 1, 2]
+//Dos dimensiones (filas y columnas)
+[[0, 1, 2] [0, 1, 2]]
+
+let miArrayRecorrer = [1,2,3,4]
+for(let i = 0; i < miArrayRecorrer.length; i++){
+    console.log(miArrayRecorrer[i]);
+}
+
+//Recorrer un array con forEach
+miArrayRecorrer.forEach(function(element){
+    console.log(element);
+})
+//Recorrer un array con forEach pero en funcion flecha
+//Funcion flecha mas simple
+miArrayRecorrer.forEach((element) => console.log(element))
+//Funcion flecha mas compleja
+miArrayRecorrer.forEach((element) =>{
+    //Aqui podemos hacer lo que queramos
+    const a = 1;
+    console.log(element + a);
+})

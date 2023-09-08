@@ -26,11 +26,9 @@ let user = {
 };
 
 let newUser = {};
-
 //En este bucle, se copian las propiedades del objeto user al objeto newUser. 
 //Esto se hace mediante la asignación de cada propiedad de user a newUser. 
 //Como resultado, newUser ahora tiene las mismas propiedades y valores que user.
-
 for (let key in user){
   newUser[key] = user[key];
 }
