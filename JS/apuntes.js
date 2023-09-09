@@ -513,7 +513,7 @@ const miFunction = (arg1, arg2) =>{
     return arg1 + arg2;
 }
 
-// para hacer la funcion flecha sin necesidad del return, solo se
+//Para hacer la funcion flecha sin necesidad del return, solo se
 //puede hacer una operacion.
 
 const funcionFlecha = (arg1, arg2) => arg1 + arg2;
@@ -691,7 +691,7 @@ for(lety[key, value] of entries){
 const propertyNames = Object.getOwnPropertyNames(persona);
 console.log(propertyNames);
  
-//Lo  utilizamos para ver los valores que tenmos en el objeto persona.
+//Lo  utilizamos para ver los valores que tenemos en el objeto persona.
 for(const propertyName of propertyNames){
     console.log(propertyName + " : " + persona[propertyName]);
 }
@@ -1081,3 +1081,13 @@ miArrayRecorrer.forEach((element) =>{
     const a = 1;
     console.log(element + a);
 })
+
+export function counterZero(numbersArray){
+    let contador = 0;
+    for (let i = 0; i <= numbersArray.length; i++){
+        if(numbersArray[i] == 0){
+            contador++;
+        }
+    }
+    return contador;
+}
