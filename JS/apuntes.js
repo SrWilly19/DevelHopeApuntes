@@ -1082,6 +1082,7 @@ miArrayRecorrer.forEach((element) =>{
     console.log(element + a);
 })
 
+//
 export function counterZero(numbersArray){
     let contador = 0;
     for (let i = 0; i <= numbersArray.length; i++){
