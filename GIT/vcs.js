@@ -40,4 +40,25 @@ Querremos confirmar el codigo agregado y luego enviar nuestro codigo al servidor
 -commit hte added code
 -push our code to athe server
 
+
+git init
+para iniciar un repositorio donde se guardaran las cosas
+
+
+git add. selecciona todos los archivos
+
+git commit -m "se agrego un nuevo archivo" haces el commit y le das un mensaje
+
+git graph para ver las ramas del repositorio
+git log muestra los commits hechos
+git status muestra los archivos agregados o pendientes
+git branch rama2 crea una nueva rama
+gir checkout rama2 te mueve a esa nueva rama
+git checkout -b rama2 crear un rama y te mueve a ella directamente
+git merge rama1 nos permite seleccionar que parte del codigo nos quedamos si esta en conflicto porque han cambiadolo mismo.
+git diff muestra cambios
+
+
+para que un archivo no se vaya a git, es decir que no se guarde alli
+creamos un archivo .gitignore y dentro pondremos los nombres de los archivos que queremos que no se suban a git  
 */
