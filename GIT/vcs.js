@@ -35,28 +35,51 @@ compartan su codigo.
 Las diferentes etapas cuando usamos Git son, por supuesto, para escribir código.
 Luego agregamos este código a Git, y finalmente, queremos cometer la puesta en escena+ç
 Querremos confirmar el codigo agregado y luego enviar nuestro codigo al servidor.
--write some code.
--add that code to git
--commit hte added code
+-write some code (working area) (Primero escribiremos algo de codigo sin agregarlo a git)
+-add that code to git (staging area) (Agregamos el codigo a Git y esto lo convierte en nuestra area de ensayo)
+-commit the added code (make a new version) (todo lo que agreguemos ira a esa nueva version)
 -push our code to athe server
 
+Si hacemos un "git status" despues de añadir un archivo y hacer un commit de otro, nos deben salir uno en verde y otro en rojo, el rojo nos dira 
+que no esta haciendo el seguimiento de ese archivo.
+Cada vez que hacemos un git commit nos dejara el mensaje de que lo ha agregado a nuestro area de ensayo
+Si listamos todos los elementos (incluidos los ocultos) que tenemos dentro de nuestro directorio de git veremos que tenemos varias carpetas con "."  ".." ".git" que estan ocultas
 
-git init
-para iniciar un repositorio donde se guardaran las cosas
+*Cuando iniciamos un comando en Git tendremos que poner primero git seguido del comando*
+
+git init ==> para iniciar un repositorio donde se encuentra y donde guardara las cosas
+git add. ==> selecciona todos los archivos para hacer el commit
+git add nombreDelArchivo ==> selecciona un archivo en especifico para hacer el commit
+git commit -m "se agrego un nuevo archivo" ==> haces el commit y le das un mensaje con "-m" para que sepas que ha pasado
+git graph ==> para ver las ramas del repositorio
+git log ==> muestra los commits hechos
+git status ==> muestra los archivos agregados o pendientes
+git branch rama2 ==> crea una nueva rama
+gir checkout rama2 ==> te mueve a esa nueva rama
+git checkout -b rama2 ==> crear un rama y te mueve a ella directamente
+git merge ramaDeLaQueVienenLosDatos ==> nos permite fusionar varias ramas y en visual //
+nos permite seleccionar que parte del codigo nos quedamos si esta en conflicto porque han cambiado lo mismo.
+git diff ==> muestra cambios
+git restore nombre archivo ==> nos permite volver a su estado anterior
+git reset numeroDelCommit ==> deshace el commit
+git fetch ==> actualiza todas las ramas que se han hecho
+git pull origin main ==> subes el commit que tengas preparado a tu pagina inicial
+origin ==> es solamente una convencion para llamarlo como variable, pero puedes llamarlo como quieras
+git --help ==> nos sive para que nos liste todos los comandos que podemos utilizar
+git config -l ==> lista todos los elementos que tenemos.
+git config --global ==> Cambiaremos la configuracion global de nuestro git es decir de todo el ordenador 
+(git config --global user.name "Willy") ==> cambiamos el nombre en todo el git, si no salta error probablemente este bien
+git config --global init.defaultBranch main ==>  con el comando "init.defaultBranch" configuramos la rama principal que se creará cuando inicialices un nuevo repositorio, y el "main" 
+siguiente es la rama que queremos establecer como predeterminada.
+git config --help ==> nos dara la lista de comandos que podemos utilizar con "git config".
+
+ls -la ==> listara todos los archivos y carpetas incluidas las ocultas
 
 
-git add. selecciona todos los archivos
-
-git commit -m "se agrego un nuevo archivo" haces el commit y le das un mensaje
-
-git graph para ver las ramas del repositorio
-git log muestra los commits hechos
-git status muestra los archivos agregados o pendientes
-git branch rama2 crea una nueva rama
-gir checkout rama2 te mueve a esa nueva rama
-git checkout -b rama2 crear un rama y te mueve a ella directamente
-git merge rama1 nos permite seleccionar que parte del codigo nos quedamos si esta en conflicto porque han cambiadolo mismo.
-git diff muestra cambios
+*Clonar un repositorio de internet en nuestro ordenador*
+(Comando que utilizaremos)
+git clone "enlace de la pagina que copiaremos sin comillas"==> copiara un repositorio de internet y lo colocara en nuestro ordenador 
+Debemos tener la pagina de GitHub que vamos a clonar abierta, ya que tendremos que coger el enlace desde el boton verde, normalmente utilizamos la opcion SSH.
 
 
 para que un archivo no se vaya a git, es decir que no se guarde alli
