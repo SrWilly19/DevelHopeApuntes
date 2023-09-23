@@ -72,9 +72,19 @@ git config --global ==> Cambiaremos la configuracion global de nuestro git es de
 git config --global init.defaultBranch main ==>  con el comando "init.defaultBranch" configuramos la rama principal que se creará cuando inicialices un nuevo repositorio, y el "main" 
 siguiente es la rama que queremos establecer como predeterminada.
 git config --help ==> nos dara la lista de comandos que podemos utilizar con "git config".
+git log ==> es una lista de todos los diferentes commits hechos en nuestro repositorio, con los autores que lo han hecho y el mensaje que debemos poner para que sea bastante descriptivo
+git branch ==> Nos enseñara las ramas que tenemos y la rama en la que estamos con una estrellita.
 
 ls -la ==> listara todos los archivos y carpetas incluidas las ocultas
 
+git diff ==> Solo devolvera diferencias entre la version actual y el ultimo commit que  hicimos de todos los archivos, si creamos nuevos archivos o eliminamos lineas de codigo
+*Si ejecutamos "git diff" despues de hacer un cambio en un archivo, como agregar una linea se vera asi*
+--- a/text.txt
++++ b/text.txt ==> te dice que ha sido modificado
+@@ -1,2 +1,3 @@
+-Here's some text! ==> saldra con un - y con la linea en rojo si se ha eliminado dicha  linea 
+Here's some more text!
++Here's the line I added ==> te dice que linea a sido la que se ha añadido en color verde
 
 *Clonar un repositorio de internet en nuestro ordenador*
 (Comando que utilizaremos)
