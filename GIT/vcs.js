@@ -47,22 +47,34 @@ Si listamos todos los elementos (incluidos los ocultos) que tenemos dentro de nu
 
 *Cuando iniciamos un comando en Git tendremos que poner primero git seguido del comando*
 
+git pull hace todo de una meintras que git log nos permite dividir el proceso en pasos, utilizando "git pull" y "git fetch"
+
 git init ==> para iniciar un repositorio donde se encuentra y donde guardara las cosas
 git add. ==> selecciona todos los archivos para hacer el commit
 git add nombreDelArchivo ==> selecciona un archivo en especifico para hacer el commit
 git commit -m "se agrego un nuevo archivo" ==> haces el commit y le das un mensaje con "-m" para que sepas que ha pasado
+git push origin main ==> vamos a subir nuestro codigo a la pagina origen que tenemos seleccionada (origin), todo nuestro main que es donde tendremos todo.
+git pull origin main ==> Si realizamos un cambio en algun archivo desde la pagina de github si queremos tener los archivos actualizados debemos hacer este pull
+para que nos traiga todos los cambios realizados en la pagina a nuestro ordenador donde estamos trabajando
 git graph ==> para ver las ramas del repositorio
 git log ==> muestra los commits hechos
+git remote show origin ==> nos enseñara en que URL esta almacenando nuestro repositorio de Git y donde guardara (push) nuestro codigo
 git status ==> muestra los archivos agregados o pendientes
 git branch rama2 ==> crea una nueva rama
 gir checkout rama2 ==> te mueve a esa nueva rama
 git checkout -b rama2 ==> crear un rama y te mueve a ella directamente
-git merge ramaDeLaQueVienenLosDatos ==> nos permite fusionar varias ramas y en visual //
-nos permite seleccionar que parte del codigo nos quedamos si esta en conflicto porque han cambiado lo mismo.
+git merge ramaDeLaQueVienenLosDatos ==> nos permite fusionar varias ramas y en visual nos permite seleccionar que parte del codigo nos quedamos si esta en conflicto porque han cambiado lo mismo
+Desde la linea de comandos nos dire que hay un conflicto y debemos meternos en el archivo para ver que lineas de codigo quermos quedarnos, cuando hayamos decidido solo tendremos que guardar el 
+archivo, preparalo para el commit (git add archivo) y entonces podremos hacer el commit sin ningun problema
 git diff ==> muestra cambios
-git restore nombre archivo ==> nos permite volver a su estado anterior
-git reset numeroDelCommit ==> deshace el commit
+git restore nombreDelArchivo ==> nos permite volver a su estado anterior
+git restore --staged nombreDelArchivo ==> Si ya hemos preparado ese arhcivo para el commit y en "git status" nos sale en verde, utilizamos este comando para vuelva al estado de no preparado para 
+el commit y nos dejara la opcion de utilizar "git restore" para poder dejar el archivo en su estado anterior
+git reset numeroDelCommit ==> deshace el commit pero si queremos restaurar algunos archivos tendremos que hacer el "git restore"
+git revert codigoCortoIzquierda ==> Utilizamos el codigo numerico corto que aparece a la izquierda de las lineas para que podemos revertir esos commits sin llegar a eliminarlos por si 
+tuvieramos que volver a un estado anterior ya que no elimina el registro solo lo revierte a un cambio anterior o que hayamos marcado
 git fetch ==> actualiza todas las ramas que se han hecho
+git fetch origin main ==> recupera todos los commits que se han realizado pero no los fusionara en nuestro git actual, si quiero fusionar todo debemos utilizar el comando "git merge"
 git pull origin main ==> subes el commit que tengas preparado a tu pagina inicial
 origin ==> es solamente una convencion para llamarlo como variable, pero puedes llamarlo como quieras
 git --help ==> nos sive para que nos liste todos los comandos que podemos utilizar
@@ -73,8 +85,13 @@ git config --global init.defaultBranch main ==>  con el comando "init.defaultBra
 siguiente es la rama que queremos establecer como predeterminada.
 git config --help ==> nos dara la lista de comandos que podemos utilizar con "git config".
 git log ==> es una lista de todos los diferentes commits hechos en nuestro repositorio, con los autores que lo han hecho y el mensaje que debemos poner para que sea bastante descriptivo
+git log --oneline ==> nos enseñara los codigos de cada cambio por si queremos tenerlos mas a mano para poder utilizarlos con otro comando como revert
 git branch ==> Nos enseñara las ramas que tenemos y la rama en la que estamos con una estrellita.
-
+git checkout . ==> Hace que elimine todos los cambios hasta el ultimo commit (si realizamos un git status despues nos debe decir que no a habido ningun cambio como para hacer un commit)
+git checkout (codigo has de la parte a la que queremos volver) ==>  hace que vuelvas atras en el tiempo y te quedes con los cambios que se hicieron hasta el commit que has utilizado como codigo
+nos aparecera un texto explicandonos como crear una nueva rama para que no tengamos que perder ningun archivo y nos enseña el comando que debemos de utilizar siqueremos retroceder hasta antes de
+utilizar git checkout: 
+git switch - ==> deshacemos el git checkout que hemos hecho antes
 ls -la ==> listara todos los archivos y carpetas incluidas las ocultas
 
 git diff ==> Solo devolvera diferencias entre la version actual y el ultimo commit que  hicimos de todos los archivos, si creamos nuevos archivos o eliminamos lineas de codigo
