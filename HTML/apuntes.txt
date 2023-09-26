@@ -42,3 +42,5 @@ Para poner comentarios en HTML se debe de utilizar esto <!--Texto que sera el co
 <!--Podemos darle el atributo de clase de la siguiente manera, pertenece a nuestra etiqueta p-->
 <p class="paragraph">This is some text</p>
 <a href="https://google.com">This is a link!</a> <!--Una etiqueta a (ancla) puede tomar algunos atributos especiales que otras etiquetas no pueden usar-->
+
+Los archivos que queremos que utilice nuestra pagina web como scripts pueden estar en el mismo servidor de nuestra pagina HTML o puede ser un archivo externo.
