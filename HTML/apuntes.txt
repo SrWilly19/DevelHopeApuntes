@@ -44,3 +44,27 @@ Para poner comentarios en HTML se debe de utilizar esto <!--Texto que sera el co
 <a href="https://google.com">This is a link!</a> <!--Una etiqueta a (ancla) puede tomar algunos atributos especiales que otras etiquetas no pueden usar-->
 
 Los archivos que queremos que utilice nuestra pagina web como scripts pueden estar en el mismo servidor de nuestra pagina HTML o puede ser un archivo externo.
+
+Etiquetas Open Graph: 
+Siempre van en el encabezado de su HTML junto con los otros metadatos se ponen de la siguiente manera:
+<meta property="Name" content="value"/>
+
+og:title
+<title>My Website</title>
+<meta property="og:title" content="My website"/>
+
+og:type
+<meta property="og:type" content="website" />
+
+og:image
+<meta property="og:image" content="/colby.jpg" />
+
+og:url
+<meta property="og:url" content="https://cool.com" />
+
+og:description
+<meta name="description" content="My blog" />
+<meta property="og:description" content="My blog"/>
+
+
+
