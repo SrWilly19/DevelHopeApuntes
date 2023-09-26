@@ -1,0 +1,44 @@
+1.HTML (Lenguaje de marcas)
+    -Hyper text markup languaje
+    <p>This is some text</p>
+    <a href="google.com">This is a link to Google!</a>
+2.CSS (Cascading Style Sheet)
+    -change color, font size, font, layout
+    -responsive
+    -global + consistent
+    p{
+        color: red;
+    }
+3.Git
+    -versioning
+    -collaborate
+4.NPM
+    -makes code accessible to the internet
+5.JavaScript
+    -programming language (scripting languaje)
+6.Angular (+TypeScript)
+    -frontend framework
+
+HTML:
+No es un lenguaje de programacion, es un lenguaje de marcas utilizado para crear paginas webs, pero tendremos que ayudarnos de css para darle un buen formato.
+
+Title of a section
+    This is a paragraph with some text.
+    Image
+    ---------------
+    ---------------
+    ---------------
+    List
+        element 1 
+        element 2
+        element 3
+
+Para poner comentarios en HTML se debe de utilizar esto <!--Texto que sera el comentario--> 
+<!--Nuestros atributos a veces dicen alggo sonbre mnuestras etiquetas HTML, otras veces nos dan informacion que peude afectar el comportamiento de esa etiqueta-->
+
+<!--Se considera un elemento, si tiene una etiqueta de apertura y otra de cierre-->
+<html>content</html>
+
+<!--Podemos darle el atributo de clase de la siguiente manera, pertenece a nuestra etiqueta p-->
+<p class="paragraph">This is some text</p>
+<a href="https://google.com">This is a link!</a> <!--Una etiqueta a (ancla) puede tomar algunos atributos especiales que otras etiquetas no pueden usar-->

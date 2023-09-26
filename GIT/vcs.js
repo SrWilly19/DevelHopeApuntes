@@ -47,7 +47,7 @@ Si listamos todos los elementos (incluidos los ocultos) que tenemos dentro de nu
 
 *Cuando iniciamos un comando en Git tendremos que poner primero git seguido del comando*
 
-git pull hace todo de una meintras que git log nos permite dividir el proceso en pasos, utilizando "git pull" y "git fetch"
+git pull hace todo de una mientras que git log nos permite dividir el proceso en pasos, utilizando "git pull" y "git fetch"
 
 git init ==> para iniciar un repositorio donde se encuentra y donde guardara las cosas
 git add. ==> selecciona todos los archivos para hacer el commit
