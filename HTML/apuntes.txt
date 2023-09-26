@@ -64,7 +64,18 @@ og:url
 
 og:description
 <meta name="description" content="My blog" />
-<meta property="og:description" content="My blog"/>
+<meta property="og:description" content="My blog" />
 
+og:locale
+English - United States
+<meta property="og:locale" content="en_US" />
 
+og:site_name
+My company
+<meta property="og:site_name" content="My company" />
 
+og:video
+<meta property="og:video" content="/video.mov" />
+
+twitter:card
+<meta name="twitter:card" content="summary_large_image" />
