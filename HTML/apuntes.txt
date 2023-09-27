@@ -79,3 +79,22 @@ og:video
 
 twitter:card
 <meta name="twitter:card" content="summary_large_image" />
+
+DRY promuebe la reducción de la duplicación.
+
+Ejercicio de navbar
+<nav>
+            <h1>Navbar</h1>
+            <h2>Home</h2>
+            <a>Link</a>
+            <select>
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Opcion 3</option>
+                <option>Opcion 4</option>
+            </select>
+            <button disabled>Disable</button>
+
+            <input placeholder="Search"/>
+            <button>Search</button>
+        </nav>
