@@ -110,5 +110,14 @@ Debemos tener la pagina de GitHub que vamos a clonar abierta, ya que tendremos q
 
 
 para que un archivo no se vaya a git, es decir que no se guarde alli
-creamos un archivo .gitignore y dentro pondremos los nombres de los archivos que queremos que no se suban a git  
+creamos un archivo .gitignore y dentro pondremos los nombres de los archivos que queremos que no se suban a git
+
+Para enviar un archivo desde mi branch al repositorio donde estamos trabajando. 
+primero un git pull para actualizar el archivo por si alguien hubiera hecho algun cambio.
+Segundo git checkout -n NombreDeMiNuevaBranch para crear mi rama donde realizare todos los cambios
+Tercero añadir el archivo con git add . para posteriormente poder hacer el commit
+Cuarto asegurarme con un git status que mi archivo esta en verde
+Quinto git commit -m "Mensajequequieraponer" con esto enviaremos el archivo con nuestros datos y un mensaje 
+Sexto git push para que nos de el mensaje que deberemos copiar y ejecutar (git push --set-upstream origin NombreDeLaBranch)
+Septimo vamos a GitHub y seguimos todos los pasos cambiando nuestra rama main a la rama development
 */

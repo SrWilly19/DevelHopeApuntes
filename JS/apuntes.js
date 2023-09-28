@@ -696,7 +696,7 @@ for(const propertyName of propertyNames){
     console.log(propertyName + " : " + persona[propertyName]);
 }
 //For in iterar en objetos. Entra en todo el objeto
-//For of cuando lo utiulizamos sacando los datos como array,
+//For of cuando lo utilizamos sacando los datos como array,
 //puedes elegir que datos quieres sacar.
 
 
