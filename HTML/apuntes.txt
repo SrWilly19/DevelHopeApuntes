@@ -98,3 +98,9 @@ Ejercicio de navbar
             <input placeholder="Search"/>
             <button>Search</button>
         </nav>
+Creamos un campo para poner la tarjeta de credito, la parte de label nos dara solo el texto que saldra al lado de la caja que sera el input justo debajo de este, le podemos dar el atrubuto
+de required que eso hace que sea obligatorio de llenarlo para poder enviar el formulario. El tipo es importante ya que si queremos poner solo numeros como en este caso para una tarjeta
+debemos poner type="text" porque con numeros nos deja poner solo de uno en uno como si fuera una cuenta y nunca podriamos poner la tarjeta bien. En el placeholder le damos una guia de como
+queremos que se ponga el texto. Si quisieramos hacer que solo ponga numeros tendriamos que utilizar un script para filtrar el tipo de texto que introducimos
+<label for="form-cc">Credit card number <abbr title="required"></abbr> (Required)</label>
+<input id="form-cc" name="cc" type="text" placeholder="1234 5678 9012 3456" maxlength="19" required/>
