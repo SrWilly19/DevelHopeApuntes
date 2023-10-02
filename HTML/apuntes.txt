@@ -41,7 +41,8 @@ Para poner comentarios en HTML se debe de utilizar esto <!--Texto que sera el co
 
 <!--Podemos darle el atributo de clase de la siguiente manera, pertenece a nuestra etiqueta p-->
 <p class="paragraph">This is some text</p>
-<a href="https://google.com">This is a link!</a> <!--Una etiqueta a (ancla) puede tomar algunos atributos especiales que otras etiquetas no pueden usar-->
+<a href="https://google.com" target="_blank">This is a link!</a> <!--Una etiqueta a (ancla) puede tomar algunos atributos especiales que otras etiquetas no pueden usar // target="_blank"
+se utiiza para que la pagina que has puesto en el enlace te la abra en otra pestaña-->
 
 Los archivos que queremos que utilice nuestra pagina web como scripts pueden estar en el mismo servidor de nuestra pagina HTML o puede ser un archivo externo.
 
@@ -82,22 +83,6 @@ twitter:card
 
 DRY promuebe la reducción de la duplicación.
 
-Ejercicio de navbar
-<nav>
-            <h1>Navbar</h1>
-            <h2>Home</h2>
-            <a>Link</a>
-            <select>
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Opcion 3</option>
-                <option>Opcion 4</option>
-            </select>
-            <button disabled>Disable</button>
-
-            <input placeholder="Search"/>
-            <button>Search</button>
-        </nav>
 Creamos un campo para poner la tarjeta de credito, la parte de label nos dara solo el texto que saldra al lado de la caja que sera el input justo debajo de este, le podemos dar el atrubuto
 de required que eso hace que sea obligatorio de llenarlo para poder enviar el formulario. El tipo es importante ya que si queremos poner solo numeros como en este caso para una tarjeta
 debemos poner type="text" porque con numeros nos deja poner solo de uno en uno como si fuera una cuenta y nunca podriamos poner la tarjeta bien. En el placeholder le damos una guia de como
