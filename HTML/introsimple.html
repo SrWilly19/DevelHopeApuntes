@@ -9,23 +9,30 @@
         ademas algunos elementos no hace falta poner la etiqueta de cierre-->
     </head>
     <body>
-        <section id="description">
+        <main></main>
             <!--span se utiliza para aislar una palabra o una parte de algun texto y poder darle un formato distinto-->
             <h1><span id="banana">Banana</span> Bread Recipe!</h1><!--Le dara el encabezado a la pagina, muy recomendable utilizar solo un H1 en la pagina y despues los encabezados mas pequeños-->
-            <p>This is may favorite banana bread recipe!</p> <!--Parrafos que el navegador interpreta y deja una separacion entre ellos-->
-            <h2>Introduction to our Recipe (h2)</h2>
-            <p>We're going to walk you through step by step how to make banana bread</p>
-            <br><!--Introduce un salto de linea-->
-            <p>This is the story all about my banana bread.</p>
-            <pre><!--Solamente utilizaremos este tipo de etiquetas en circunstancias muy específicas en las que sea absolutamente necesario-->
+            <article></article>
+                <section id="description">
+                    <figure>
+                        <!--alt="Frase" es lo que saldra si la imagen no carga, un pequeño "resumen" de lo que veremos incluyelo siempre aunque este vacio-->
+                        <img src="imagefile.jpg"  alt="Large bundle of bananas on a white background" width="237" height="175" >
+                        <figcaption>Bananas add a nice sweetness to our bread!</figcaption><!--Pie de foto, el texto que queremos que salga-->
+                    </figure>
+                    <p>This is may favorite banana bread recipe!</p> <!--Parrafos que el navegador interpreta y deja una separacion entre ellos-->
+                    <h2>Introduction to our Recipe (h2)</h2>
+                    <p>We're going to walk you through step by step how to make banana bread</p>
+                    <br><!--Introduce un salto de linea-->
+                    <p>This is the story all about my banana bread.</p>
+                    <pre><!--Solamente utilizaremos este tipo de etiquetas en circunstancias muy específicas en las que sea absolutamente necesario-->
 I always loved banana bread ever since I was a kid.
 My mom always cooked it for me!
-            </pre>
-            <blockquote><!--define un bloque de texto citado-->
-                Banana bread is the best bread in the whole world.
-                -Albert Einstein
-            </blockquote>
-        </section>
+                    </pre>
+                    <blockquote><!--define un bloque de texto citado-->
+                        Banana bread is the best bread in the whole world.
+                        -Albert Einstein
+                    </blockquote>
+                </section>
         <hr><!--No necesita una etiqueta de cierre como link, nos separa la pagina con una linea divisoria negra-->
         <section id="recipe"><!--Divide nuestro html en secciones-->
             <h3>Ingredients you'll need</h3>

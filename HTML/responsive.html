@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Responsiveness</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <!--Con srcset damos unas cuantas imagenes con su tamaño, nos servira porque veremos si van cambiando sin perder calidad. Sizes dice que cuando el tamaño de la pantalla es 
+        de 768 pixeles o menos nuestra imagen solo ocupara el 50% de la ventana grafica total y si es mas grande debera tomar el 100% sizes="(max-width: 768px) 50vw, 100vw -->
+        <img  srcset="imagefile.jpg 1920w, otraimagen.jpg 960w, otraimagen2.jpg 480w, otraimagen3.jpg 240w" 
+        src="imagefile.jpg" alt="A large pile of bananas">
+        <!--700px => 350px => imagefile (480px)
+        400px => 200px => otraimagen3 (240px)-->
+        <!--Picture nos permite elegir entre diferentes fuentes de imagen dependiendo del tamaño de nuestra pantalla y otras propiedades de nuestro a navegador-->
+        <picture>
+            <source srcset="banana.jpg 1920w, otraimagen.jpg 960w">
+            <img src="imagefile.jpg" alt="A large pile of bananas">
+        </picture>
+    </body>
+</html>
