@@ -13,7 +13,10 @@
         400px => 200px => otraimagen3 (240px)-->
         <!--Picture nos permite elegir entre diferentes fuentes de imagen dependiendo del tamaño de nuestra pantalla y otras propiedades de nuestro a navegador-->
         <picture>
-            <source srcset="banana.jpg 1920w, otraimagen.jpg 960w">
+            <source media="(min-width: 600px)"srcset="banana.jpg 1920w, otraimagen.jpg 960w">
+            <!--Si el tamaño de la imagen es menor a 600 enseñara nuestra imagen cuadrada-->
+            
+            <source srcset="otraimagen-cuadrada.jpg">
             <img src="imagefile.jpg" alt="A large pile of bananas">
         </picture>
     </body>

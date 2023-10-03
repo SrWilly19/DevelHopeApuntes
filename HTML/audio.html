@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Audio</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h2>Here's some music!</h2>
+        <!--Podemos quitar el atributo controls pero entonces no nos saldran lo de parar ni el volumen, si quieremos que se reproduzca automaticamente le pondremos el atributo autoplay
+        pero este no siempre funciona ya que puede ser molesto y algunos navegadores lo bloquiena. -->
+        <audio controls>
+            <!--El navegador primero intetara reproducir el ogg y despues pasara al siguiente de la lista-->
+            <source src="archivoDeAudio.ogg" type="audio/ogg">
+            <source src="archivoDeAudio.mp3" type="audio/mp3">
+            <!--Ogg es un formato de audio mas optimizado para uso web simplemente termina comprimiendo el audio sin sacrificar tanta calidad de audio-->
+            <!--<source src="archivoDeAudio.ogg" type="audio/ogg">-->
+        </audio>
+    </body>
+</html>
