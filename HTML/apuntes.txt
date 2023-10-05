@@ -89,3 +89,5 @@ debemos poner type="text" porque con numeros nos deja poner solo de uno en uno c
 queremos que se ponga el texto. Si quisieramos hacer que solo ponga numeros tendriamos que utilizar un script para filtrar el tipo de texto que introducimos
 <label for="form-cc">Credit card number <abbr title="required"></abbr> (Required)</label>
 <input id="form-cc" name="cc" type="text" placeholder="1234 5678 9012 3456" maxlength="19" required/>
+
+padding cuando son elementos le damos con pixeles // cuando son elementos muy grandes se puede utilizar por porcentage
