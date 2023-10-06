@@ -6,7 +6,19 @@
     </head>
     <body>
         <form>
-            <input type="text">
+            <label for="first_name">First name:</label><!--La etiqueta (label) esta asociada directamente a un elemento de formulario-->
+            <input type="text" name="first_name" placeholder="Ej. Willy"><!--Les damos la misma etiqueta de nombre porque estan asociados, placeholder es lo que veremos encima de nuestro
+            input pero que solo nos enseña lo que podemos poner-->
+            <label for="last_name">Last name:</label>
+            <input type="text" name="last_name">
+            <input type="checkbox" name="subscribe" value="subscribed"><!--Si le damos un valor sera lo que enviara de nuestro formulario, si no le damos ningun valor solo saldra on o off-->
+            <label for="subscribe">Subscribe to the newesletter!</label>
+            <input type="checkbox" name="terms" value="agreed">
+            <label for="terms">Agree to terms and conditions</label>
+            <br>
+            <input type="radio" name="favorite_fruit">
+            <input type="radio" name="favorite_fruit">
+            <input type="radio" name="favorite_fruit">
             <button>Submit</button>
         </form>
     </body>
