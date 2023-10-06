@@ -16,9 +16,64 @@
             <input type="checkbox" name="terms" value="agreed">
             <label for="terms">Agree to terms and conditions</label>
             <br>
-            <input type="radio" name="favorite_fruit">
-            <input type="radio" name="favorite_fruit">
-            <input type="radio" name="favorite_fruit">
+            <input type="radio" id="banana" name="favorite_fruit" value="banana"><!--Botones que por defecto van desmarcados, son circulares y solo se puede marcar, se desmarca el anterior solo si tienes 
+            mas de 1, con la etiqueta valor le damos el valor que enviara desde nuestro formulario, le ponemos un id y no utilizamos su name ya que tenemos el mismo en las tres frutas-->
+            <label for="banana">Banana</label>
+            <input type="radio" id="apple" name="favorite_fruit" value="apple">
+            <label for="apple">Apple</label>
+            <input type="radio" id="grapes" name="favorite_fruit" value="grapes">
+            <label for="grapes">Grapes</label>
+            <br>
+            <label for="color">Color</label>
+            <input type="color" name="color">
+            <br>
+            <label for="date">Date</label>
+            <input type="date" name="date">
+            <br>
+            <label for="email">Email</label>
+            <input type="email" name="email">
+            <br>
+            <label for="file">File</label>
+            <input type="file" name="file">
+            <br>
+            <label for="number">Number</label>
+            <input type="number" name="number">
+            <br>
+            <label for="password">Password</label>
+            <input type="password" name="password">
+            <br>
+            <label for="range">Range</label>
+            <input type="range" name="range">
+            <br>
+            <label for="time">Time</label>
+            <input type="time" name="time">
+            <br>
+            <label for="url">URL</label>
+            <input type="url" name="url">
+            <br>
+            <label for="favorite_fruit">Choose your favorite fruit:</label>
+            <select name="favorite_fruit" id="favorite_fruit">
+                <option value="banana">Banana</option><!--Simpre que le damos atributo valor es lo que enviara sobre esa parte del formulario, es decir si seleccionamos manzanas 
+                enviara apple porque es el valor que le hemos dado.-->
+                <option value="apple">Apple</option>
+                <option value="grapes">Grapes</option>
+            </select>
+            <br>
+            <label for="message">Write your message here:</label>
+            <!--El area del texto es como nuestra etiqueta pre, tendremos que poner el texto sin tab para que quede mejor-->
+            <textarea name="message" id="message" rows="10" cols="50">
+This is the default message 
+            </textarea>
+            <br>
+            <label for="favorite_flavour">What's your favorite ice cream?</label>
+            <input type="text" name="favorite_flavour" id="favorite_flavour" list="options"><!--Le damos el atributo lista y enlazamos nuetra datalist con el id que le hemos dado
+            asi cuando salga en el navegador nos dejara seleccionar entre las opciones que tenemos dentro de la datalist-->
+            <datalist id="options">
+                <option value="Chocolate">
+                <option value="Vanilla">
+                <option value="Mint">
+            </datalist>
+            <br>
             <button>Submit</button>
         </form>
     </body>
