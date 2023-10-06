@@ -7,10 +7,11 @@
     <body>
         <form>
             <label for="first_name">First name:</label><!--La etiqueta (label) esta asociada directamente a un elemento de formulario-->
-            <input type="text" name="first_name" placeholder="Ej. Willy"><!--Les damos la misma etiqueta de nombre porque estan asociados, placeholder es lo que veremos encima de nuestro
-            input pero que solo nos enseña lo que podemos poner-->
+            <input type="text" name="first_name" placeholder="Ej. Willy" required pattern="[A-Za-z]+" minlength="2" maxlength="20"><!--Les damos la misma etiqueta de nombre porque estan asociados, placeholder es lo que veremos encima de nuestro
+            input pero que solo nos enseña lo que podemos poner, utilizamos required porque es un campo requerido, pattern para que solo entre el tipo texto que nosotros hemos maracado en 
+            las [], podemos darle un maximo de letras y un minimo.-->
             <label for="last_name">Last name:</label>
-            <input type="text" name="last_name">
+            <input type="text" name="last_name" placeholder="Ej. Coral" required>
             <input type="checkbox" name="subscribe" value="subscribed"><!--Si le damos un valor sera lo que enviara de nuestro formulario, si no le damos ningun valor solo saldra on o off-->
             <label for="subscribe">Subscribe to the newesletter!</label>
             <input type="checkbox" name="terms" value="agreed">
