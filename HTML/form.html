@@ -5,25 +5,47 @@
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <form>
-            <label for="first_name">First name:</label><!--La etiqueta (label) esta asociada directamente a un elemento de formulario-->
+        <!--Nunca por nada del mundo anidar un formulario dentro de un formulario,Si quiero coger datos de mi servidor y llevarlo a mi formulario, si utilizamos post es que queremos
+        publicar algunos datos en el servidor en el -->
+        <form method="get" action="https://www.google.com">
+            <label for="first_name">First name:<abbr title="required">*</abbr></label><!--La etiqueta (label) esta asociada directamente a un elemento de formulario, utilizamos la 
+            etiqueta "abbr" para darle un valor al asterisco por si el ordenador tiene que leer esa parte o si se posiciona el raton encima nos dira que es necesario-->
             <input type="text" name="first_name" placeholder="Ej. Willy" required pattern="[A-Za-z]+" minlength="2" maxlength="20"><!--Les damos la misma etiqueta de nombre porque estan asociados, placeholder es lo que veremos encima de nuestro
             input pero que solo nos enseña lo que podemos poner, utilizamos required porque es un campo requerido, pattern para que solo entre el tipo texto que nosotros hemos maracado en 
             las [], podemos darle un maximo de letras y un minimo.-->
-            <label for="last_name">Last name:</label>
-            <input type="text" name="last_name" placeholder="Ej. Coral" required>
-            <input type="checkbox" name="subscribe" value="subscribed"><!--Si le damos un valor sera lo que enviara de nuestro formulario, si no le damos ningun valor solo saldra on o off-->
-            <label for="subscribe">Subscribe to the newesletter!</label>
-            <input type="checkbox" name="terms" value="agreed">
-            <label for="terms">Agree to terms and conditions</label>
             <br>
-            <input type="radio" id="banana" name="favorite_fruit" value="banana"><!--Botones que por defecto van desmarcados, son circulares y solo se puede marcar, se desmarca el anterior solo si tienes 
-            mas de 1, con la etiqueta valor le damos el valor que enviara desde nuestro formulario, le ponemos un id y no utilizamos su name ya que tenemos el mismo en las tres frutas-->
-            <label for="banana">Banana</label>
-            <input type="radio" id="apple" name="favorite_fruit" value="apple">
-            <label for="apple">Apple</label>
-            <input type="radio" id="grapes" name="favorite_fruit" value="grapes">
-            <label for="grapes">Grapes</label>
+            <label for="last_name">Last name:<abbr title="required">*</abbr></label>
+            <input type="text" name="last_name" placeholder="Ej. Coral" required>
+            <br>
+            <label id="list-label">Consent list</label>
+            <ul aria-labelledby="list-label" tabindex="0"><!--Este atributo lo utilizamos para hacer mas accesible los elementos de la pagina, permite a tecnologias de asistencia
+            proporcionar informacion adecuada. tabindex es por donde empezara a tabular, es para poder llegar a todos los puntos tabulando-->
+                <li>
+                    <input type="checkbox" name="subscribe" id="subscribe" value="subscribed" ><!--Si le damos un valor sera lo que enviara de nuestro formulario, si no le damos ningun valor solo saldra on o off-->
+                    <label for="subscribe">Subscribe to the newesletter!</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="terms" id="terms"  value="agreed" required>
+                    <label for="terms">Agree to terms and conditions</label>
+                </li>
+            </ul>
+            <br>
+            <fieldset>
+                <legend>Choose your favorite fruit:</legend><!--Esto pondra un pequeño titulo en el recuadro  negro-->
+                <div>
+                    <input type="radio" id="banana" name="favorite_fruit" value="banana"><!--Botones que por defecto van desmarcados, son circulares y solo se puede marcar, se desmarca el anterior solo si tienes 
+                    mas de 1, con la etiqueta valor le damos el valor que enviara desde nuestro formulario, le ponemos un id y no utilizamos su name ya que tenemos el mismo en las tres frutas-->
+                    <label for="banana">Banana</label>
+                </div>
+                <div>
+                    <input type="radio" id="apple" name="favorite_fruit" value="apple">
+                    <label for="apple">Apple</label>
+                </div>
+                <div>
+                    <input type="radio" id="grapes" name="favorite_fruit" value="grapes">
+                    <label for="grapes">Grapes</label>
+                </div>
+            </fieldset> 
             <br>
             <label for="color">Color</label>
             <input type="color" name="color">
