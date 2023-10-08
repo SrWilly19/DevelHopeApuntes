@@ -2,10 +2,13 @@
 <!DOCTYPE html> <!-- Le dice al navegador la manera en la que tiene que leer este documento, le dice que esto es una pagina HTML-->
 <hmtl> <!--HTML TAG de Apertura-->
     <head>
-        <title>Willy's recipes!</title> <!--Con esta etiqueta le damos el nombre que saldra arriba en la pestaña del navegador (titulo de nuestr pagina web)-->
-        <script src="script.js"></script> <!--Si queremos agregar un script debemos poner en "src" de donde traemos ese script y su nombre para que funcione-->
-        <link href="/CSS/style.css"> <!--Conectamos nuestra hoja de estilo atraves del elemento "link" y le damos elatributo "href" donde pondremos el nombre de nuestro archivo-->
-        <link rel="icon" type="image/x-icon" href="icon.ico"> <!--En este caso le tenemos que dar mas informacion de lo que vamos a poner,el tipo y rel a parte del enlace al icono
+        <!--Con esta etiqueta le damos el nombre que saldra arriba en la pestaña del navegador (titulo de nuestr pagina web)-->
+        <title>Willy's recipes!</title> 
+        <!--<script src="script.js"></script> Si queremos agregar un script debemos poner en "src" de donde traemos ese script y su nombre para que funcione-->
+        <link rel="stylesheet" type="text/css" href="..\CSS\style.css">
+        <!--Conectamos nuestra hoja de estilo atraves del elemento "link" y le damos elatributo "href" donde pondremos el nombre de nuestro archivo, tenemos que poner bien la ruta de
+        nuestro archivo css ya que si esta en una carpeta diferente de la nuestra tendremos que salir de la carpeta con ".." y despues poner la ruta a la carpeta y nuestro archivo-->
+        <!--<link rel="icon" type="image/x-icon" href="icon.ico"> En este caso le tenemos que dar mas informacion de lo que vamos a poner,el tipo y rel a parte del enlace al icono
         ademas algunos elementos no hace falta poner la etiqueta de cierre-->
     </head>
     <body>
@@ -56,10 +59,10 @@ My mom always cooked it for me!
             </ul>
             <h3>The steps of the recipe</h3>
             <ol><!--ol se utiliza para declarar una lista ordenada nos lo marcara por numero del 1 al que deseemos añadir para que se siga un orden-->
-                <li>Smash the bananas</li><!--li representa a los elementos de la lista-->
+                <li class="important">Smash the bananas</li><!--li representa a los elementos de la lista-->
                 <li>Add some Flour</li>
                 <li>Add some milk</li>
-                <li>Bake the whole mixture!</li>
+                <li class="important">Bake the whole mixture!</li>
             </ol>
             <!--<h3>Smaller than our h2</h3>Debemos ponerlos con su orden, ya que poner un h3 antes del h2 es una mala practica y esto igual con los demas
             <h4></h4>El orden es fundamental para el posicionamiento SEO

@@ -18,3 +18,6 @@ selector{
     propiedad2: valor;
     propiedad3: valor;
 }
+
+Si queremos poner en el selector un id debemos poner primero "#" seguido del id que queremos utilizar.
+Si queremos poner en el selector una clase debemos poner primero "." seguido de la clase que queremos utilizar.
