@@ -14,10 +14,29 @@ Propiedad y valor: Es un par de valores, el valor sera lo que afectara en nuestr
 Una regla CSS puede incluir tantos pares de valroes de propiedad como desee.
 Siempre debes acabar cada uno con un punto y coma.
 selector{
-    propiedad: valor;
+    propiedad: valor ;
     propiedad2: valor;
     propiedad3: valor;
 }
 
 Si queremos poner en el selector un id debemos poner primero "#" seguido del id que queremos utilizar.
 Si queremos poner en el selector una clase debemos poner primero "." seguido de la clase que queremos utilizar.
+
+Si ponemos una regla justo debajo de otra con las mismas propiedades pero con valores distintos anularan la regla anterior y cargaran esta.
+Otra manera de anular reglas es ponerlas directamente en el HTML con el atributo "style" pero esto no es muy buena practica ya que es mejor separar el CSS del HTML.
+
+main{
+    background-color: #red !important;
+}
+
+main{
+    background-color: #green ;
+}
+
+De esta manera pondra el fondo de color verde ya que anulamos la primera regla, pero si queremos que sea la primera la que se ejecute solo tenemos que ponerle !important al final de la
+regla que queremos que no se salte, aun asi tampoco es una buena practica ya que nos estamos cargando la cascada de nuestro CSS
+
+Otra manera de anular las reglas es poniendo un nuevo css debajo del que tenemos en nuestra pagina es decir:
+<link rel="stylesheet" type="text/css" href="..\CSS\style.css">
+<link rel="stylesheet" type="text/css" href="..\CSS\style2.css">
+El dos sera el que mande y no hara caso al primer archivo css
