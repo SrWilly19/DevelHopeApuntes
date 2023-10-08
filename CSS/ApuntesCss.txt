@@ -1,6 +1,20 @@
+De esta manera hacemos una linea que sea roja si el valor que ponemos es invalido y que se quede como negra si lo que queremos poner es valido y cumple las reglas que hayamos puesto
 input:invalid {
     border: 2px dashed red;
 }
 input:valid{
     border: 2px soid black;
+}
+
+Crear una regla CSS:
+
+Selector: Puede ser el nombre de una etiqueta, puede ser el nombre de una clase que le hemos dado a un conjunto de elementos, puede ser una identificacion, pueden ser muchos tipos 
+diferentes de selectores
+Propiedad y valor: Es un par de valores, el valor sera lo que afectara en nuestra propiedad. 
+Una regla CSS puede incluir tantos pares de valroes de propiedad como desee.
+Siempre debes acabar cada uno con un punto y coma.
+selector{
+    propiedad: valor;
+    propiedad2: valor;
+    propiedad3: valor;
 }
