@@ -40,3 +40,36 @@ Otra manera de anular las reglas es poniendo un nuevo css debajo del que tenemos
 <link rel="stylesheet" type="text/css" href="..\CSS\style.css">
 <link rel="stylesheet" type="text/css" href="..\CSS\style2.css">
 El dos sera el que mande y no hara caso al primer archivo css
+
+selector{
+    border: inherit;/*Esto se hace para que erede del padre que seria recipe, si cambiamos algo en el padre cambiara en todos los que tengan la herencia*/
+    color: initial; /*Establece el color de la fuente principal, no el heredado, nos puede servir para utilizar la fuente principal ya sea color, tamaño, o cualquier
+    otra modificacion y no algo heredado.*/
+}
+selector{
+    all: unset;/*All lo utilizamos para seleccionar todos los elementos que tenemos en el ol y unset se utiliza para eliminar el estilo ya sea heredado o no, se quedara todo
+    con la fuente principal*/
+}
+
+Ejemplos
+
+.block{
+    border: 3px solid black;
+}
+
+section{
+    border: 5px solid blue;
+}
+
+
+section.block h2, h1{ /*Esto lo hacemos para cambiar solo los h2 que estan dentro del padre section, se puede hacer con todos de esta manera no afectara a todos los h2 solo los que cumplan +
+    esa condicion. Le ponemos una coma para que tambien afecte a nuestro h1 u otro elemente que queramos que cambie*/
+    font-size: 36px;
+}
+
+* {/*Dado que esto es un selecctor poco espeficico cualquier selector mas especifiso se sobrepondra a este y no afectara ninguna propiedad*/
+    font-size: 24px;
+}
+
+Los selectores de Id se consideran mas especificos que los selectores de class. Si se tiene que elegir entre la norma de class e Id prebalecera la de Id.
+Pero aun asi lo mas especifico es darle estilo desde nuestro HTML directamente, esto anulara cualquier norma de css que tengamos en la parte que se la hayamos dado
