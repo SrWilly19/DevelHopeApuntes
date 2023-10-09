@@ -1,0 +1,23 @@
+section{
+    background-color: aqua;
+    height: 120px;
+   /*overflow: scroll; Sirve para que nos salga una barra para desplazarnos donde desborda y asi no perder nada, pero si tenemos otra seccion aunque este vacia nos creara las
+   barras de desplazamiento*/
+   overflow: auto; /*auto solo nos pondra las barras de desplazamiento en lo necesario*/
+}
+
+.box{
+    background-color: red;
+    color: white;
+    width: 240px;
+    height: 240px;
+    padding: 25px;
+    border: 5px solid black;
+    margin: 25px;
+    display: block;
+}
+
+/*span{
+    display: inline;
+    font-size: 36px;
+}*/

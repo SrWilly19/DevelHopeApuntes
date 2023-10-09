@@ -246,3 +246,26 @@ p + ul{
     color: red;
     font-weight: bold;
 }
+
+UNIDADES DE MEDIDA (TODAS EN MINUSCULAS, SOLO ESTA EN MAYUSCULAS PARA VERLO MEJOR)
+
+PX: Se basa en los px de la pagina. 
+
+EM: Si ponemos por ejemplo 1.5em esto hara que el tamañano de la fuente sea 1,5 veces mas grande que el elemento padre mas cercano.
+
+REM: Se refiere al tamaño de fuente raiz del documento, si establecemos un 2rem sera el doble del tamaño de fuente raiz, idependientemente de los tamaños definidos en elementos
+padres. Siempre se basa en el tamaño de la fuente raiz del documento. Para poder hacerlo tendremos que añadir al principio lo siguiente asi de esta manera se fijara en la fuente
+raiz.
+
+html{
+    font-size: 16px; Este sera nuestro tamaño de fuente predeterminado, donde se fijara nuestro rem.
+}
+
+
+%: El porcentaje se fijara en el elemento padre de donde este y se basara en ocupar el x% de su padre.
+
+VW:
+
+CH: Se basa en caracteres de texto, si le damos un "width: 40ch;" seria ocupar un ancho de 40 caracteres mas o menos. Se escala a medida que aumente la fuente.
+Debemos tener cuidado porque puede provocar desbordamiento es decir, que no se ajusta a  la pantalla. Si queremos solucionar eso en vez de darle solo el ancho
+le debemos dar un "max-width: 40ch;" entonces si que se escalara en la pantalla ya que 40 es el maximo.
