@@ -73,3 +73,176 @@ section.block h2, h1{ /*Esto lo hacemos para cambiar solo los h2 que estan dentr
 
 Los selectores de Id se consideran mas especificos que los selectores de class. Si se tiene que elegir entre la norma de class e Id prebalecera la de Id.
 Pero aun asi lo mas especifico es darle estilo desde nuestro HTML directamente, esto anulara cualquier norma de css que tengamos en la parte que se la hayamos dado
+
+
+EJERCICIO{
+main.{
+    display: flex;
+    flex-direction: row;
+    height: 90vh;
+    width: 100vw;
+}
+
+.side-bar{
+    height: 90vh;
+    width: 10vw;
+    background-color:lightblue;
+}
+.contenido{
+    height: 90vh;
+    width: 90vw;
+    background-color: lightblue;
+
+    display: flex;
+    flex-direction: column;
+    algi-items: center;
+    justify-content: spac-around;
+}
+
+<body>
+    <nav>
+    <div class="main">
+        <div class="side-bar"></div>
+</body>
+}
+
+/Si queremos que esta regla solo vaya al input con algun tipo en especifico lo tendremos que poner entre [] como en el siguiente ejemplo, esto nos bordeara de azul solo el campo
+con el tipo email.
+
+input[type="email"]{
+    border: 2px solid blue;
+}
+
+En las imagenes poniamos el alt para una pequeña descripcion de lo que es la imagen, si lo utilizamos de la siguiente manera lo que hacemos es buscar una imgen con el atributo alt dentro,
+entonces aplicaremos el estilo al elemento.
+
+img[alt]{
+    border: 5px solid green;
+}
+
+Apuntamos a todos los elementos pero solo afectara a los que tengan el atributo (title="required") y sera solo a los que afecte el estilo.
+
+*[title="required"]{
+    font-size: 24px;
+    color: red;
+}
+
+PSEUDOCLASES:
+Se ponen con un solo ":"
+Esto se utiliza cuando un usuario pasa el mouse del usuario sobre nuestra parrafo en este ejemplo, 
+
+p:hover{
+    background-color: yellow;
+}
+
+Esto lo que hara sera aplicarle el estilo cuando p (parrafos) sea el primer hijo.
+
+p:first child{
+    background-color: yellow;
+}
+
+Esto le aplicara el estilo a todos los primeros p (parrafos)
+
+p:first-of-type{
+    background-color: yellow;
+}
+
+Le aplicara el estilo al ultimo hijo p (parrafo)
+
+p:last-child{
+    background-color: red;
+}
+
+Le aplicara el estilo a los ultimos p (parrafos)
+
+p:last-of-type{
+    background-color: red;
+}
+
+Podemos decirle la poscion en la que queremos que actue nuestro estilo, en este caso sera el segundo hijo p (parrafo) de cualquier padre.
+
+p:nth-child(2){
+    background-color: yellow;
+}
+
+Le aplicamos el estilo al segundo p (parrafo) ya que estamos mirando los tipos, de cualquier padre.
+
+p:nth-of-type(2){
+    background-color: yellow;
+}
+
+No solo nos valen numeros tambien podemos poner odd (impar), y esto hara que se aplique el estilo en todos los hijos p (parrafo) que sean impares.
+
+p:nth-child(odd){
+    background-color: yellow;
+}
+
+PSEUDOELEMENTOS:
+
+Se deben poner con dos "::"
+Son elementos que se agregan a nuestro HTML, no en nuestro documento original.
+Podemos agregar contenido a nuestro HTML a traves del CSS.
+
+Si queremos añadir exclamacion al final del h2 tendremos que utilizar "::after", siempre que utilices after, tendremos que especificar una propiedad de
+contenido especial, es alli donde tendremos que poner lo que queremos agregar. Y podemos darle mas propiedades que afectaran solo al contenido que hemos introducido en content.
+
+h2::after{
+    content: "!";
+    font-size: 3em; Esto significa que sera 3 veces el tamaño de nuestro h2.
+    color: yellow;
+    background-color: black;
+}
+
+Aqui lo haremos al contrario en vez de poner la exclamacion al final la pondremos al principio
+
+h2::before{
+    content: "!";
+    font-size: 3em; Esto significa que sera 3 veces el tamaño de nuestro h2.
+    color: yellow;
+    background-color: black;
+}
+
+Esto nos permite cambiar el comportamiento al seleccionar arrastrando el rato por encima de algun parrafo, veremos como ha cambiado con el fondo negro y las letras amarillas
+
+p::selection{
+    background-color: black;
+    color: yellow;
+}
+
+COMBINING SELECTORS ADVANCED
+
+Todas las etiquetas p (parrafo) que sean descedientes de nuestra etiqueta section, es decir todos los parrafos que tienen un section como padre:
+
+section p{
+    color: red;
+    font-weight: bold;
+}
+
+Si queremos que solo seleccione parrafos que son hijos de directos del padre. En este caso solo seleccionara hijos p que sean directos del padre section.
+
+section > p{
+    color: red;
+    font-weight: bold;
+}
+
+Los hijos div no tienen por que ser hijos directos, pero si que tienen que ser hijos de nuestra section. Y despues seleccionaremos a todos los hijos directos p de ese div.
+
+section div > p{
+    color: red;
+    font-weight: bold;
+}
+
+Para poner la virgulilla es ALT + 126, manten presionado alt y despues pon 126 en el teclado numerico, suelta alt y aparecera el simbolo.
+Esto se utiliza para el selector de hermanos. Queremos diseñar todas las listas que son hermanos de nuestro p. Un hermano es cualquier elemento que es hijo de otro elemento.
+
+p ~ ul{
+    color: red;
+    font-weight: bold;
+}
+
+Esto solo afectara a la lista ul que es hermana directamente despues de ese p.
+
+p + ul{
+    color: red;
+    font-weight: bold;
+}
