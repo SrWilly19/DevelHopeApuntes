@@ -264,8 +264,115 @@ html{
 
 %: El porcentaje se fijara en el elemento padre de donde este y se basara en ocupar el x% de su padre.
 
-VW:
+VW: Se refiere al porcentaje del ancho total de la ventana del navegador. Se utiliza para hacer elementos responsivos en relacion con el ancho de la ventana del navegador. Ej: width: 50vw;
+significa que el elemento ocupara el 50% del ancho de la ventana del navegador.
 
 CH: Se basa en caracteres de texto, si le damos un "width: 40ch;" seria ocupar un ancho de 40 caracteres mas o menos. Se escala a medida que aumente la fuente.
 Debemos tener cuidado porque puede provocar desbordamiento es decir, que no se ajusta a  la pantalla. Si queremos solucionar eso en vez de darle solo el ancho
 le debemos dar un "max-width: 40ch;" entonces si que se escalara en la pantalla ya que 40 es el maximo.
+
+FUNCIONES:
+
+.box{
+    background: linear-gradient( red, blue); // Nos creara un degradado de la combinacion de colores que le hemos dado dentro del parentesis.
+    width: calc(100vw / 3); // Si quisiera que nuestra pantalla fuera un tercio de la ventana grafica. le damos el 100vw del ancho de vista y lo dividimos en 3
+    width: calc(100vw / 3 - 50px) // Si quieres que sea 1/3 de la pantalla y restarle el margen, tambien podemos ponerlo. Podemos mezclar cualquier cantidad de unidades
+}
+
+CUSTOM PROPERTIES:
+
+Esto lo tendremos que poner al inicio de nuestro documento css, ya que el root se encargara de asignar estas propiedades personalizadas para que se usen en todo. Cuando definimos
+una propiedad personalizada, le damos un doble guion al principio, luego el nombre: y el valor que le daremos.
+
+:root{
+    --red: red;
+    --blue: blue;
+    --spacing: 1rem;
+}
+
+Para utilizarlas tendremos que poner var(--red) ya que var es la que nos guiara al root donde tenemos nuestra variable con el valor.
+
+h2{
+    margin-bottom: var(--spacing);
+    color: var(--red);
+}
+
+REGLAS AT GENERALMENTE UTILIZADA PARA IMPORTAR ARCHIVOS O IMPORTAR DIFERENTES TIPOGRAFIAS:
+
+Para utilizarlo se pondra al inicio de nuestro css en este ejemplo importaremos otro archivo css al nuestro, es importante que lo rodeemos de comillas para que sepamos que estamos
+buscando algun tipo de archivo, lo haremos de la siguiente manera:
+
+@import url('import.css');
+
+Para importar una fuente primero tendremos que descargarla (podremos hacerlo desde google fonts), la guardaremos en nuestra carpeta de fonts y entonces pasamos al ejemplo:
+
+@font-face{
+    font-family: "Roboto"; // Especifica el nombre de la fuente
+    src: url('../fonts/Roboto-Regular.ttf') format("truetype"); // Pondremos la ubicacion de la fuente y el formato
+}
+
+LINKS Y LISTAS 
+
+Cuando visitamos un enlace se crear una pseudoclase que se llama visited, para entrar en ella y poder darle el formato que queremos debemos hacerlo de la siguiente manera:
+
+a:visited{
+    color: green;
+}
+
+a{
+    color: red; // Cambiara ese color azul ya predefinido que tienen los enlaces.
+    text-decoration: none; // De esta manera quitaremos el subrayado de los enlaces que tambien viene predefinido.
+    text-decoration: underline; // Esto hara que tengamos el subrayado en los enlaces.
+    text-decoration: line-through; // Esto nos hara que los enlaces esten tachados por una linea en medio.
+}
+
+En las listas desordenadas nos salen puntos en lugar de una numeracion para cada elemento de la lista, si quisieramos cambiar eso tendriamos que hacerlo de la siguiente manera:
+
+li{
+    list-style: square; // Le daremos a nuestra lista un cuadrado en vez de el circulo ya predefinido.
+    list-style: url('../images/imagen.svg'); // Tambien podemos cambiarlo por una imagen que encaje en nuestra lista.
+    list-style: none; // De esta manera quitaremos cualquier decoracion de puntos, cuadrados o numeros.
+}
+
+REGLAS DE POSICION:
+
+STATIC: Posicion estatica para un cuadrado que esta en un div. Es practicamente como el comportamiento predeterminado. Si intentamos poner algun bottom, right o left, no hara ningun 
+efecto.
+
+div:first-child{
+    position: static;
+}
+
+RELATIVE: Mueve el elemento relativo desde su posicion original.
+
+div:nth-child(2){
+    position: relative;
+    top: 10ch;
+    left: 10ch;
+}
+
+ABSOLUTE: El elemento se posiciona en relacion con el elemento principal.
+
+div:nth-child(3){
+    position: absolute;
+    top: 10ch;
+    left: 10ch;
+}
+
+STICKY: Esta anclado a nuestra pagina es decir si bajamos con la rueda del raton nos llevaremos esta caja, y el top que le hemos puesto sera solo la separacion que hay entre el cuadrado
+hasta la parte superior de nuestra ventana grafica. Solo sera adhesivo dentro de nuestro elemento principal. Es decir si acaba nuestro elemento principal nos dejaremos el objeto al final
+y cuando volvamos lo recuperaremos y volvera a pegarse a nosotros.
+
+div:nth-child(4){
+    position: sticky;
+    top: 10ch;
+}
+
+FLOAT PROPERTY:
+
+Saca un elemento del flujo de documentos normal y luego lo empuja a un lado o al otro de nuestro documento.
+
+div{
+    float: right; // Haremos que nuestro elemento se ponga a la derecha de la pantalla. Esto tiene un inconveniente y es que ahora movera todo lo demas respecto a el, que esta anclado a
+    la derecha.
+}
