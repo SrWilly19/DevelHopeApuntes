@@ -376,3 +376,15 @@ div{
     float: right; // Haremos que nuestro elemento se ponga a la derecha de la pantalla. Esto tiene un inconveniente y es que ahora movera todo lo demas respecto a el, que esta anclado a
     la derecha.
 }
+
+FLEX:
+
+Lo primero cuando hacemos un diseño flexible es aplicar dislpay: flex; a nuestro elemento principal
+
+Normalmente flex-grow se establece en o --> flex-grow: 0;
+y flex-shrink se establece en 1 --> flex-shrink: 1;
+
+
+En lugar de configurar la contraccion flexible, la base flexible y el crecimiento flexible por separado podemos usar una propiedad llamada flex, tomara nuestro crecimiento, nuestro
+encogimineto y finalmente, nuestro flex base como tres argumentos para que podamos desahacernos del resto de estas propiedades.
+flex: 0 1 20ch;

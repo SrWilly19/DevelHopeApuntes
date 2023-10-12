@@ -1,0 +1,51 @@
+html{
+    font-family: sans-serif;
+}
+
+#recipe{
+    background-color: #9999ef;
+    color: white;
+    border: 3px solid red !important;
+    text-align: center;
+}
+
+.block{
+    border: 3px solid black;
+}
+
+section{
+    border: 5px solid blue;
+}
+
+.important{
+    font-weight: bold;
+}
+
+section.block h2, h1{
+    font-size: 36px;
+}
+
+article{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+#description{
+    flex: 1 1 50%;
+}
+
+#recipe{
+    flex: 1 1 30ch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+ol{
+    flex: 0 1 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

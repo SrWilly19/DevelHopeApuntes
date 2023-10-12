@@ -1,0 +1,53 @@
+section{
+    border: 3px solid black;
+    margin-bottom: 1rem;
+    position: relative;
+    display: flex;
+    /*flex-wrap: wrap;Esto hara que cuando nuestra pagina se haga mas pequeña no se distorsiones nuestras cajas que estan en flex, lo que haran sera bajar a la siguiente linea asi 
+    ninguna quedara distorsionada*/
+    /*flex-direction: row-reverse;Esto lo que hara es invertir el orden de las cajas, sera util en situaciones especificas*/
+    /*flex-direction: column; Esto nos hara que nuestras columnas se pongan de forma vertical*/
+    flex-direction: row;/*Esto hara que se pongan de manera horizontal.*/
+    /*max-height: 50vh; Establece la altura maxima de nuestra seccion para que sea la mitad de la altura de laventana grafica.*/
+    justify-content: center; /*Esto nos espaciara las cajas al centro de nuestro contenedor flexible*/
+    /*justify-content: space-between; Nos hara tener un espacio uniforme entre todos nuestros elementos*/
+    /*justify-content: flex-end; Esto nos servira para alinear con el lado derecho de nuestro contenedor flexible, ya que por defecto nos lo alinea a la izquierda. Si tenemos el
+    flex-direction: column; esto no nos lo alineara a la derecha si no que lo hara hacia abajo al fondo.*/
+    /*align-items: center; Nos sirve poara que podamos aliniear los elementos al centro en medio del eje horizontal. Siendo las cajas unas mas pequeñas se alinearan todas al centro como 
+    si fueran montañas. - ' - ' */
+    align-items: flex-end; /*Esto nos alineara todos los elementos hacia abajo en nuestro contenedor, es decir si hay cajas mas pequeñas quedaran como escalones _ - _ -*/
+    gap: 1rem; /*Nos hace un espacio entre las filas de nuestra caja flexible. Forma una brecha de 1rem entre todos los elementos de nuestra caja flexible, si le damos mas rem
+    tendremos mas separacion*/
+}
+
+section.no-flex{
+    display: block;
+}
+
+div{
+ 
+    height: 20ch;
+    border: 5px solid red;
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+   /* flex-basis: 20ch; Es casi lo mismo que darle un ancho pero esto es mas flexible.
+    flex-shrink: 1;
+    flex-grow: 2; Se ira haciendo mas grande para adaptarse a la pantalla*/
+    flex: 0 1 20ch;
+}
+
+div:nth-child(odd){
+    height: 10ch;
+}
+
+#one{
+    /*flex-shrink: 4; Esto hara que cuando no haya sufiente espacio para todos los elementos con su base flexible elegira encoger el primer elemento antes de encoger
+    cualquiera de los otros*/
+    flex-grow: 1; /*Se ira haciendo mas grande para adaptarse al contenedor, y crecera en relacion con los otros contenedores*/
+    align-self: flex-start; /*Usa para cambiar la alineacion de un elemento flexible especifico*/
+}
+
+#two{
+    flex-grow: 2; /*Este contenedor ocupara el doble del espacio que el primer contenedor cuando se vaya haciendo grande*/
+}

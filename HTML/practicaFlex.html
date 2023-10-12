@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practica Flex</title>
+        <link rel="stylesheet" href="../CSS/practicaFlex.css">
+    </head>
+    <body>
+        <main>
+            <h1><span id="banana">Banana</span> Bread Recipe!</h1>
+            <h2>Outside of the section</h2>
+            <article>
+                <section id="description" class="block">
+                    <figure>
+                        <!--alt="Frase" es lo que saldra si la imagen no carga, un pequeño "resumen" de lo que veremos incluyelo siempre aunque este vacio-->
+                        <img src="imagefile.jpg"  alt="Large bundle of bananas on a white background" width="237" height="175" >
+                        <figcaption>Bananas add a nice sweetness to our bread!</figcaption><!--Pie de foto, el texto que queremos que salga-->
+                    </figure>
+                    <p>This is may favorite banana bread recipe!</p> <!--Parrafos que el navegador interpreta y deja una separacion entre ellos-->
+                    <h2>Introduction to our Recipe (h2)</h2>
+                    <p>We're going to walk you through step by step how to make banana bread</p>
+                    <br><!--Introduce un salto de linea-->
+                    <p>This is the story all about my banana bread.</p>
+                    <pre><!--Solamente utilizaremos este tipo de etiquetas en circunstancias muy específicas en las que sea absolutamente necesario-->
+I always loved banana bread ever since I was a kid.
+My mom always cooked it for me!
+                    </pre>
+                    <blockquote><!--define un bloque de texto citado-->
+                        Banana bread is the best bread in the whole world.
+                        -Albert Einstein
+                    </blockquote>
+                </section>
+                <section id="recipe" class="block">
+                    <h2>The recipe!</h2>
+                    <h3>Ingredients you'll need</h3>
+                    <table>
+                        <tr>
+                            <!--"th" se utiliza para darle un encabezado a la tabla el cual resaltara mas-->
+                            <th>Bananas</th>
+                            <th>Flour</th>
+                            <th>Milk</th>
+                        </tr>
+                        <tr>
+                            <td>3 pieces</td>
+                            <td>5000 gr</td>
+                            <td>200 ml</td>
+                        </tr>
+                    </table>
+                    <!--<ul>ul se utiliza para declarar una lista desordenada no importara como lo miremos solo nos dara una lista
+                        <li>Bananas!</li> li representa a los elementos de la lista
+                        <li>Flour</li>
+                        <li>Milk</li>
+                    </ul>-->
+                    <h3>The steps of the recipe</h3>
+                    <ol><!--ol se utiliza para declarar una lista ordenada nos lo marcara por numero del 1 al que deseemos añadir para que se siga un orden-->
+                        <li class="important">Smash the bananas</li><!--li representa a los elementos de la lista-->
+                        <li>Add some Flour</li>
+                        <li>Add some milk</li>
+                        <li class="important">Bake the whole mixture!</li>
+                    </ol>
+                </section>
+                <section id="details">
+                    <h2>Extra details!</h2>
+                    <p>Here's some more text about bananas</p>
+                    <ul>
+                        <li>Bananas are yellow</li>
+                        <li>Bananas are delicious</li>
+                        <li>Bananas are healthy</li>
+                    </ul>
+                </section>
+            </article>
+        </main>
+    </body>
+</html>
