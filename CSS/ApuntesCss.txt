@@ -19,8 +19,8 @@ selector{
     propiedad3: valor;
 }
 
-Si queremos poner en el selector un id debemos poner primero "#" seguido del id que queremos utilizar.
-Si queremos poner en el selector una clase debemos poner primero "." seguido de la clase que queremos utilizar.
+Si queremos poner en el selector un id debemos poner primero "#" seguido del id que queremos utilizar. Suele ser solo de elementos unicos.
+Si queremos poner en el selector una clase debemos poner primero "." seguido de la clase que queremos utilizar. Se puede reutilizar para varios si utilizan el mismo estilo.
 
 Si ponemos una regla justo debajo de otra con las mismas propiedades pero con valores distintos anularan la regla anterior y cargaran esta.
 Otra manera de anular reglas es ponerlas directamente en el HTML con el atributo "style" pero esto no es muy buena practica ya que es mejor separar el CSS del HTML.
@@ -388,3 +388,4 @@ y flex-shrink se establece en 1 --> flex-shrink: 1;
 En lugar de configurar la contraccion flexible, la base flexible y el crecimiento flexible por separado podemos usar una propiedad llamada flex, tomara nuestro crecimiento, nuestro
 encogimineto y finalmente, nuestro flex base como tres argumentos para que podamos desahacernos del resto de estas propiedades.
 flex: 0 1 20ch;
+

@@ -1,0 +1,29 @@
+:root{
+    --item-width: 300px;
+}
+
+section{
+    border: 3px solid black;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+div{
+    border: 5px solid red;
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+}
+
+section.grid{
+    display: grid;
+    gap: 1rem;
+    /*grid-template-columns: 50% 50%; con esto se nos saldran las cajas por los lados, es decir tendremos desbordamiento, para solucionar eso utilizaremos nuestra unidad fraccionaria fr:*/
+    /*grid-template-columns: 1fr 1fr; Esta unidad lo que hace es calcular a partir del espacio disponible para dividir ese espacio y darle partes iguales a cada columna. Podemos 
+    simplificar esto con la siguiente linea*/
+    grid-template-columns: repeat(2, 1fr); /*Esto es lo mismo que tenemos arriba, repetimos 2 veces 1fr*/
+    /*grid-template-columns: repeat(autofit, minmax(1fr)); la funcion min max define un rango de valores en los que puede caer nuestro ancho de columna, si definimos como primer numero un
+    valor en pixeles seguramente se nos salga de nuestra caja padre, para evitar esto utilizamos un valor especial llamado ajuste automatico (autofit)*/
+    grid-template-rows: 50px 100px 100px 200px; /*Es de la manera en la que se ponen las filas y las columnas, tendremos que poner el tamaño aqui las filas va en parejas en este caso, 
+    es decir a primera fila seran los dos 50px, la segunda 100px, la tercera 100px y la cuarta 200px*/
+}
