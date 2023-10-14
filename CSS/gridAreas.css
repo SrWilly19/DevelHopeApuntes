@@ -1,0 +1,57 @@
+:root{
+    --item-width: 300px;
+}
+
+section{
+    border: 3px solid black;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+div{
+    border: 5px solid red;
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+}
+
+section.grid{
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 50px 100px 100px 200px;
+    /*Para poder hacer grid-template-areas tendremos que haber declarado las partes que queremos utilizar como en la parte de abajo, si ponemos un punto en alguna linea representa a 
+    una columna vacia, es decir habra un hueco*/
+    /*grid-template-areas:
+    "header header header header" 
+    "nav . content content"
+    "nav . content content"
+    "footer footer footer footer";*/
+}
+
+/*Justo aqui
+#header{
+    grid-area: header;
+}
+#nav{
+    grid-area: nav;
+}
+#content{
+    grid-area: content;
+}
+#footer{
+    grid-area: footer;
+}*/
+
+/*Si quisieramos hacer la misma figura pero de otra manera esta seria una, utilizando grid-column o grid-row y dandole un span x (x sera el numero de huecos que queremos que utilice.)
+para realizar la forma que tenemos arriba, pero no nos quedara igual ya que no podemos dejar los espacios en blanco como arriba*/
+#header, #footer{
+    grid-column: span 4;
+}
+#nav{
+    grid-row: span 2;
+}
+#content{
+    grid-row: span 2;
+    grid-column: span 2;
+}

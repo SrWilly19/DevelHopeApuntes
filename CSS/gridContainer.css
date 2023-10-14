@@ -22,8 +22,11 @@ section.grid{
     /*grid-template-columns: 1fr 1fr; Esta unidad lo que hace es calcular a partir del espacio disponible para dividir ese espacio y darle partes iguales a cada columna. Podemos 
     simplificar esto con la siguiente linea*/
     grid-template-columns: repeat(2, 1fr); /*Esto es lo mismo que tenemos arriba, repetimos 2 veces 1fr*/
-    /*grid-template-columns: repeat(autofit, minmax(1fr)); la funcion min max define un rango de valores en los que puede caer nuestro ancho de columna, si definimos como primer numero un
-    valor en pixeles seguramente se nos salga de nuestra caja padre, para evitar esto utilizamos un valor especial llamado ajuste automatico (autofit)*/
+    /*grid-template-columns: repeat(auto-fit, minmax(1fr)); la funcion min max define un rango de valores en los que puede caer nuestro ancho de columna, si definimos como primer numero un
+    valor en pixeles seguramente se nos salga de nuestra caja padre, para evitar esto utilizamos un valor especial llamado ajuste automatico (autofit), si alguna de las columnas cae por
+    debajo de los 100px, creara otra fila y espaciara las columnas en consecuencia.*/
+    /*grid-template-columns: repeat(auto-fill, minmax(1fr)); Lo que intenta hacer el autocompletado es llenar el espacio vacio que crea esto, con columnas virtuales ya que no tiene mas 
+    datos*/
     grid-template-rows: 50px 100px 100px 200px; /*Es de la manera en la que se ponen las filas y las columnas, tendremos que poner el tamaño aqui las filas va en parejas en este caso, 
     es decir a primera fila seran los dos 50px, la segunda 100px, la tercera 100px y la cuarta 200px*/
 }
