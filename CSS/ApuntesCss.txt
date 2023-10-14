@@ -71,6 +71,8 @@ section.block h2, h1{ /*Esto lo hacemos para cambiar solo los h2 que estan dentr
     font-size: 24px;
 }
 
+orientation: landscape // Si el ancho de mi ventana grafica es mayor que mi altura aplicare la regla porque la orientacion de mi pantalla es horizantal.
+
 Los selectores de Id se consideran mas especificos que los selectores de class. Si se tiene que elegir entre la norma de class e Id prebalecera la de Id.
 Pero aun asi lo mas especifico es darle estilo desde nuestro HTML directamente, esto anulara cualquier norma de css que tengamos en la parte que se la hayamos dado
 
@@ -389,3 +391,30 @@ En lugar de configurar la contraccion flexible, la base flexible y el crecimient
 encogimineto y finalmente, nuestro flex base como tres argumentos para que podamos desahacernos del resto de estas propiedades.
 flex: 0 1 20ch;
 
+MEDIA QUERIES:
+
+Debemos empezar con @media, seguido de la regla que queremos que utilice para aplicar los estilos que tenga dentro. Para aplicar los media queries tendremos que utilizar esta sintaxis:
+
+@media (regla: x){
+    selector{
+        propiedad: valor;
+    }
+
+    selector{
+        propiedad: valor;
+    }
+}
+
+Ejemplos
+Si el tamaño de la pantalla es de al menos 768 pixeles o mas, aplicaremos nuestra regla
+
+@media(min-width: 768px){
+    div:first-child{
+        flex-basis: calc(100%/3);
+        background: red;
+        color: white;
+    }
+    div:nth-child(2){
+        flex-basis: calc(100% / 3 * 2);
+    }
+}
