@@ -1,0 +1,43 @@
+Dev Tools   
+-liner (ESLint) // Revisara el codigo, buscara e intentara encontrar diferentes errores de sintaxis u otros errores  ya buscan errores antes de encontrarlos en tus aplicaciones en vivo
+-code formatter (Prettier) // Impondra un determinado formato de codigo, formateara de una manera muy obstinada para que el codigo base sea consistente y facil de leer.
+-code packager/bundler (Webpack) // Podemos usar esto para proyectos muy grandes que usan un monton de codigo diferente de diferentes lugares. Cuando usasmos estos paquetes intentan
+empaquetar el codigo de fomra inteligente para que podamos terminar enviando la menor cantidad posible de datos, manteniendo al mismo tiempo el rendimiento de nuestro sitio web.
+-npm (Node Package Manager)
+
+1. Plan your project
+2. Find some packages for your use case
+3. Code is too big!
+4. Use a packager/bundler
+5. Syntax errors, bugs!
+6. linter (ESLint)
+7. Code hard to read -> code formatter (Prettier)
+
+
+
+
+NODE PACKAGE MANAGER (npm)
+
+- Large database of code! javascript (Una gran base de daots de codigo, javascript)
+- Easily downloadable/shereable
+- Serves packages
+- Package: Piece of code designed to be used in another project (seamlessly)
+
+Node.js
+A javascript runtimer
+
+1Package        Bake Banana Bread
+    -get ingredients
+    -mix them
+    -bake them
+
+    1- Download package for baking
+    2- Download package for getting ingredients
+Bake Banana Bread
+
+
+A Big Baking App!
+    -Bake Banana Bread (2 dependencies)
+        -Baking package
+        -get ingredients package
+    -Bake Strawberry Pie
