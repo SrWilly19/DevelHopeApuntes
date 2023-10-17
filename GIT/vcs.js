@@ -114,7 +114,7 @@ creamos un archivo .gitignore y dentro pondremos los nombres de los archivos que
 
 Para enviar un archivo desde mi branch al repositorio donde estamos trabajando. 
 primero un git pull para actualizar el archivo por si alguien hubiera hecho algun cambio.
-Segundo git checkout -n NombreDeMiNuevaBranch para crear mi rama donde realizare todos los cambios
+Segundo git checkout -b NombreDeMiNuevaBranch para crear mi rama donde realizare todos los cambios
 Tercero añadir el archivo con git add . para posteriormente poder hacer el commit
 Cuarto asegurarme con un git status que mi archivo esta en verde
 Quinto git commit -m "Mensajequequieraponer" con esto enviaremos el archivo con nuestros datos y un mensaje 
