@@ -1,0 +1,1 @@
+let words = ["This", "is", "my", "friend", "Arnau"];
