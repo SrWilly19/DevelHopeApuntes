@@ -606,7 +606,7 @@ function sumaParImpar(arg2, arg1, callback){
     return callback(arg1, arg2);
 }
 
-const sumaParImpar2(arg1, arg2, callback) => callback(arg1, arg2);
+const sumaParImpar2 (arg1, arg2, callback) => callback(arg1, arg2);
 
 const par = sumaParImpar(1, 10, pares);
 console.log(par);
