@@ -1,0 +1,112 @@
+body{
+    background-color: black;
+    margin: 0px;
+}
+
+.navbar1{
+    background-color: darkorchid;
+    height: 50px;
+    white-space: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.izquierda{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+
+.derecha{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+}
+
+.icon{
+    margin: 5px;
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.gitIcon{
+
+}
+
+.repo{
+    margin: 5px;
+    display: block;
+    color: white;
+}
+
+
+.navbar2{
+    background-color: darkorchid;
+    height: 50px;
+    white-space: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: start;
+}
+
+.nav2button{
+    display: flex;
+    flex-direction: row;
+    height: 70%;
+    width: 5px;
+    padding: 2px;
+    align-items: center;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+}
+
+.headerIzq{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.headerDer{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+}
+
+.codigo{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 3;
+}
+
+.opciones{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
