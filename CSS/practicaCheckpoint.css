@@ -4,9 +4,9 @@ body{
 }
 
 .navbar1{
-    background-color: darkorchid;
+    background-color: darkslateblue;
     height: 50px;
-    white-space: 100%;
+    width: 100%;
 
     display: flex;
     flex-direction: row;
@@ -14,18 +14,19 @@ body{
     justify-content: space-between;
 }
 
-.izquierda{
+.navIzq{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: start;
 }
 
-.derecha{
+.navDer{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: end;
+
 }
 
 .icon{
@@ -33,12 +34,16 @@ body{
     height: 40px;
     width: 40px;
     background-color: transparent;
-    border: 1px solid grey;
+    border: 1px solid gray;
     border-radius: 5px;
 }
 
 .gitIcon{
-
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    background-color: white;
+    border-radius: 50%;
 }
 
 .repo{
@@ -47,11 +52,14 @@ body{
     color: white;
 }
 
+/* ========================= */
 
 .navbar2{
-    background-color: darkorchid;
-    height: 50px;
-    white-space: 100%;
+    background-color: darkslateblue;
+    background-color: darkslateblue;
+    height: auto;
+    width: 100%;
+    padding: 10px 0px;
 
     display: flex;
     flex-direction: row;
@@ -62,10 +70,10 @@ body{
 .nav2button{
     display: flex;
     flex-direction: row;
-    height: 70%;
-    width: 5px;
-    padding: 2px;
     align-items: center;
+    height: 70%;
+    margin: 5px;
+    padding: 2px;
 }
 
 .content{
@@ -73,11 +81,14 @@ body{
     flex-direction: column;
     justify-content: center;
     margin: auto;
+    max-width: 700px;
 }
 
 .header{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 2px solid whitesmoke;
 }
 
 .headerIzq{
