@@ -9,8 +9,13 @@
 }*/
 
 //Para crear una clase empezaremos con la palabra "class"
-//Las clases estan hechar para ser usadas y reutilizadas, po lo que necesitamos tener alguna funcion
+//Las clases estan hechas para ser usadas y reutilizadas, por lo que necesitamos tener alguna funcion.
+//Si declaramos algunos campos en la class no nos hace falta ponerle let al principio ni darle ningun valor. Si le damos un valor es para que no se quede vacion si nuestro constructor 
+//por alguna razon no lo rellenara
 class Person{
+    name;
+    age;
+    nationality;
     constructor(name, age, nationality){
         this.name = name; //{name: name}
         if(typeof(age) === "number"){
@@ -38,3 +43,17 @@ class Student extends Person{
 
 let susan = new Student("Susan", 25, "Uk", "English");
 console.log(susan); 
+
+// Prototype chain!
+// Object -> Person -> Student
+// Student -> Person -> Object -> null prototype (obj) -> null
+
+console.log(susan.__proto__.__proto__.__proto__.__proto__);
+
+// Number -> Object -> null
+let number = 1;
+console.log(number.__proto__);
+
+class ExtendedNumber extends Number{
+
+}
