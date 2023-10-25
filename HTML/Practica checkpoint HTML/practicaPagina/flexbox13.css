@@ -1,0 +1,44 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+#cabecera{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: 100px;
+    color: grey;
+    background-color: rgb(181, 236, 98);
+    gap: 10px;
+}
+
+header{
+    font-size: 87px;
+}
+
+nav{
+    display: flex;
+    justify-content: flex-start;
+    background-color: rgb(92, 143, 17);
+}
+
+nav a{
+    color: white;
+    padding: 5px;
+}
+/*Esto sirve para poner la linea entre cada elemento en una navbar*/
+nav a:not(:last-child)::after{
+    content: '|';
+    margin-left: 5px;
+    color: white;
+}
+#imagenBNav{
+    width: auto;
+    height: 200px;
+    background-image: url(carretera.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
