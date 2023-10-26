@@ -1,23 +1,135 @@
-body {
+body{
     margin: 0;
     padding: 0;
+}
+
+#contenedorTodo{
+    background-color: white;
     display: flex;
+    flex-direction: row;
+}
+
+#navbar{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: auto;
+    background-color: green;
+}
+
+#profile-pic{
+    text-align: center;
+}
+
+#cajaNombre{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    background-color: grey;
+    height: 50px;
+    width: 50px;
+    border-radius: 5px 5px 5px 5px;
+    margin-top: 20px;
 }
 
-.container {
+#nombre{
+    font-weight: bold;
+}
+
+#profile-pic{
+    margin-bottom: 20px;
+}
+
+img{
+    border: 2px solid grey;
+    background-color: grey;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+#cajacentro{
+    height: 910px;
+    width: 100%;
+}
+
+#content{
+    background-color: white;
+    width: 100%;
     display: flex;
-    flex-direction: column; /* Alinea las cajas en una columna */
+    flex-direction: column-reverse;
+    height: 200px;
+    border-bottom: 4px solid rgba(156, 152, 152, 0.479);
+}
+
+input{
+    align-self: flex-start;
+    margin: 0px 0px 40px 40px;
+    border: none;
+    background-color: rgba(190, 185, 185, 0.699);
+    padding: 10px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+input::placeholder{
+    color: black;
+}
+
+#lateralDerecha{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    margin: 20px; /* Margen en la parte superior e inferior */
+    background-color: blue;
+    width: 500px;
 }
 
-.box {
-    width: calc(50% - 100px); /* 50% del ancho menos 100px de margen a la izquierda */
-    height: 200px; /* Alto de las cajas */
-    margin: 0 20px; /* Margen en la parte derecha e izquierda */
-    background-color: #ccc; /* Color de fondo de las cajas */
+#cajaVacia{
+    width: 150px;
+    height: 50px;
+    background-color: white;
+    margin-top: 40px;
 }
 
+@media only screen and (max-width: 768px){
+    #contenedorTodo{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #navbar{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    #cajaNombre{
+        margin: 10px 10px 10px 10px;
+    }
+    #lateralDerecha{
+        display: none;
+    }
+
+    #content{
+        background-color: white;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    input{
+        align-self: flex-start;
+        margin: 40px 0px 0px 40px;
+        border: none;
+        background-color: rgba(190, 185, 185, 0.699);
+        border-radius: 5px 5px 5px 5px;
+    }
+
+    #profile-pic{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 30px 30px 30px 30px;
+    }
+}
