@@ -27,12 +27,14 @@ nav a{
     color: white;
     padding: 5px;
 }
+
 /*Esto sirve para poner la linea entre cada elemento en una navbar*/
 nav a:not(:last-child)::after{
     content: '|';
     margin-left: 5px;
     color: white;
 }
+
 #imagenBNav{
     width: auto;
     height: 200px;
@@ -42,3 +44,26 @@ nav a:not(:last-child)::after{
     background-position: center center;
 }
 
+#contenedorClases{
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    gap: 30px;
+}
+
+
+#contenedorCR{
+    border: solid 5px rgb(158, 137, 20);
+    border-radius: 20px 0 20px 0;
+}
+
+#contenedorCamp{
+    border: solid 5px rgb(59, 153, 59);
+    border-radius: 20px 0 20px 0;
+    background-color: rgb(74, 214, 74);
+}
+
+#contenedorHotel{
+    border: solid 5px rgb(25, 51, 138);
+    border-radius: 20px 0 20px 0;
+}

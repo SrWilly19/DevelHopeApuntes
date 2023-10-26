@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Alinea las cajas en una columna */
+    align-items: center;
+    margin: 20px; /* Margen en la parte superior e inferior */
+}
+
+.box {
+    width: calc(50% - 100px); /* 50% del ancho menos 100px de margen a la izquierda */
+    height: 200px; /* Alto de las cajas */
+    margin: 0 20px; /* Margen en la parte derecha e izquierda */
+    background-color: #ccc; /* Color de fondo de las cajas */
+}
+
