@@ -105,6 +105,36 @@ console.log(susan.__proto__.__proto__.__proto__.__proto__);
 let number = 1;
 console.log(number.__proto__);
 
-class ExtendedNumber extends Number{
+/*lass ExtendedNumber extends Number{
+}*/
 
+//De normal es mejor utilizar esto (extension de clases) en proyectos solo ya que otras personas podrian estar sobrescribiendo el tipo o la clase intetgrados a su manera
+class MyArray extends Array{
+    sum(){
+        return this.reduce((a, b) => a + b);
+    }
 }
+
+class NestedClass extends MyArray{
+    max(){
+        let output = -1000000;
+        this.forEach((el) => {
+            if(el > output){
+                output = el;
+            }
+        });
+        return output;
+    }
+}
+
+let arr = new MyArray(2, 3, 4, 5, 2);
+console.log(arr.sum());
+let origArr = new MyArray(3, 4, 5, 2, 4);
+if(origArr instanceof MyArray){
+    console.log(origArr.sum());
+}
+
+//NestedClass -> MyArray -> Array
+let nested = new NestedClass(4, 3, 3, 4, 2);
+console.log(nested instanceof Array);
+console.log(arr instanceof Array);
