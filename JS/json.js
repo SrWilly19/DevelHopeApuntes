@@ -13,6 +13,8 @@ class Child {
         }
     }
 }
+const sallybirthday = new Date(1987, 10, 13)
+console.log(sallybirthday);
 
 let json = {
     "name": "Sally",
@@ -36,5 +38,5 @@ let obj = JSON.parse(str, (key, val) => {
     return val;
 });
 
-console.log(json["birthday"].getDate());
-console.log(obj.children[0].birthday.getDay());
+//console.log(json["birthday"].getDate());
+//console.log(obj.children[0].birthday.getDay());
