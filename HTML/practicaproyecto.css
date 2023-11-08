@@ -1,0 +1,150 @@
+body{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .text-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    max-width: 100%;
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+  
+  .titulo-pagina{
+    margin-block-start: 0;
+    font-size: 39px;
+    font-weight: 300;
+    letter-spacing: .1px;
+    line-height: 1.5em;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 32px;
+    margin-bottom: 16px;
+    margin-block-end: 16px;
+  }
+  
+  section{
+    background-color: rgb(18, 19, 20);
+  }
+  
+  .pills-container{
+    display: flex;
+    overflow-y: scroll;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-block-start: 2px;
+    padding-block-end: 32px;
+    margin-left: calc(80px * -1);
+    margin-right: calc(80px * -1);
+    justify-content: center;
+    
+  }
+  
+  .radio-inputs {
+    position: relative;
+    display: flex;
+    padding: 2px;
+    flex-wrap: wrap;
+    border-radius: 25px;
+    background-color:  #141c1c;
+    /*box-sizing: content-box;*/
+    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+    width: 300px;
+    font-size: 14px;
+    position: fixed;
+  }
+  
+  
+  .radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  
+  .radio-inputs .radio input {
+    display: none;
+  }
+  
+  .radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border: none;
+    padding: .7rem 0;
+    color: white;
+    transition: all .20s ease-in-out;
+  }
+  
+  .radio-inputs .radio input:checked + .name {
+    background-color: white;
+    font-weight: 600;
+    color: black;
+  }
+  
+  .radio-inputs .radio:hover input:not(:checked) + .name{
+    color: #207fb9 ;
+  }
+  
+  
+  
+  #radio1:checked ~ .news-container{
+    display: block;
+  }
+  
+  #radio2:checked ~ .prox-container{
+    display: block;
+  }
+  
+  
+  .news-container{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 7px;
+    margin: 20px;
+  }
+  
+  .prox-container{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 7px;
+    margin: 20px;
+  }
+  
+  .contenedorJuegos{
+    text-align: center;
+  }
+  
+  a{
+    text-decoration: none;
+    padding: 10px;
+    text-align: end;
+    margin: 10px;
+    margin-bottom: 35px;
+    border-radius: 6px;
+  }
+  
+  
+  .images-games img{
+    max-width: 100%;
+    border-radius: 7px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+  }
+  
+  p{
+    margin-top: 10px;
+    text-align: left;
+  }
+  
+  .name-game{
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: white;
+  }
+  
+  
+  funcion onClick para poder cambiar de juegos a traves del boton pildora
+  
