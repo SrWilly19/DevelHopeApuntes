@@ -21,3 +21,19 @@ fetch("https://dog.ceo/api/breeds/image/random")
    Una vez cumplida la promesa, se pasara al paso de evento o si se rechaza a la parte de captura, luego convertimos la respuesta en un JSON que en realidad podemos utilizar 
    nuestro codigo. (Linea 14) Tomamos la clave del mensaje de nuestro JSON. (Linea 15) Finalmente colocamos la URL en nuestra funcion de fuente de imagen establecida, que en realidad 
    realiza la logica necesaria para establecer la imagen en nuestra etiqueta de imagen en nuestra pagina HTML*/
+/*request
+    -origin mysite.com
+    -method: get, post
+    -parameters
+
+fetch(url, data)
+fetch(google.com, {
+    token: "fhjfnfkjnkcc"
+})
+Google analizaria el token y veria que es compatible, esto solo si google se pusiera exquisito y quiera filtrar todo el contenido
+server
+    -rules
+    -origin(google.com)
+
+Same origin: Si la request y el server tienen el mismo origen sera mejor ya que esta todo almacenado en google.
+Cross-Origin Resource Sharing (CORS): Cuand nuestro origen es distinto al del server    */
