@@ -16,6 +16,9 @@ fetch("https://dog.ceo/api/breeds/image/random")
     .then(setImageSrc)
     .catch((err) => console.error(err))
 
+
+document.cookie = "our_cookie=hello";
+
 //Explicacion de lo que estamos haciendo aqui: 
 /* Primero con fetch buscara la API que vamos a utilizar.
    Una vez cumplida la promesa, se pasara al paso de evento o si se rechaza a la parte de captura, luego convertimos la respuesta en un JSON que en realidad podemos utilizar 
