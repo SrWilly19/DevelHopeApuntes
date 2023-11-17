@@ -1,4 +1,7 @@
 //document generalmente apuntara al navegador en si o la tipo de sesion alli esto nos pondra la una cookie
+
+const { todo } = require("node:test");
+
 //document.cookie = "our_cookie=hello";
 let names = ["bg", "text"];
 loadCookies();
@@ -32,3 +35,41 @@ function loadCookies(){
         document.documentElement.style.setProperty(`--${name}`, val);
     })
 }
+
+const toDotitle = document.getElementById("todo-title")
+const toDoCompleted = document.getElementById("todo-completed")
+const submit = document.getElementById("submit-todo");
+
+submit.addEventListener("click", async (element) => {
+    element.preventDefault()
+    const title = toDoCompleted.checked
+    const POSTdata = {
+        title: title,
+        completed: completed
+
+    }
+    try{
+        const response = await fetch("", {
+            method: "POST", 
+            headers: {"content-type": "application/json"}, 
+            body : JSON.stringify(POSTdata),
+        }
+        );
+        const data = await response.json()
+        console.log(data)
+        const mensage = document.getElementById("mensage")
+        if(Object.keys(data).lenght !== 0){
+            mensage.textContent = "Data enviada correctamente"
+            toDotitle.value = "";
+            toDoCompleted.checked = false
+        }
+    
+    }catch(error){
+        console.log(error)
+        const mensage = document.getElementById("mensage")
+        mensage.textContent = `La data no se pudo enviar `
+    }
+
+})
+
+
