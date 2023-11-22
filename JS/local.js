@@ -13,8 +13,10 @@ inputs.forEach((input, i) => {
 
 function loadStorage(){
     names.forEach((name) => {
-         let val = localStorage.getItem(name);
-         document.getElementById(name).setAttribute
-         document.documentElement.style.setProperty
-    })
+        let val = localStorage.getItem(name);
+        if(val){
+            document.getElementById(name).value = val;
+            document.documentElement.style.setProperty(`--${name}`, val);
+        }
+    });
 }

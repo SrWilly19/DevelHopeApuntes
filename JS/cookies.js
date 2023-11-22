@@ -1,5 +1,5 @@
+import{getCookie, setCookie} from "utils.js"
 //document generalmente apuntara al navegador en si o la tipo de sesion alli esto nos pondra la una cookie
-
 const { todo } = require("node:test");
 
 //document.cookie = "our_cookie=hello";
