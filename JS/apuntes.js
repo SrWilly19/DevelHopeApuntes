@@ -1092,28 +1092,3 @@ export function counterZero(numbersArray){
     }
     return contador;
 }
-
-//Ejercicio 41
-async function getInfo(){
-    let title = document.getElementById('todo-title').value
-    let checkbox = document.getElementById("todo-completed").checked
-    const data = {title, checkbox}
-
-    let info = await fetch('', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers:{
-            "Conten-Type": "aplication/json",
-        }
-    });
-
-    let infoJson = await info.json()
-
-}
-
-getInfo()
-
-let formInput = document.getElementsByClassName("")
-const data = {
-    age: formInput.value
-}
