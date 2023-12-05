@@ -41,3 +41,21 @@ for (const claves in user){
 newUser.name = "Paolo"
 //Si podemos imprimir dos objetos en el mismo console log
 console.log(newUser, user)
+
+
+function sumUpToN(number) {
+    if (number < 1) {
+        return "Please provide a positive integer greater than or equal to 1.";
+    }
+
+    let sum = 0;
+    for (let i = 1; i <= number; i++) {
+        sum += i;
+    }
+
+    return sum;
+}
+
+// Example
+var result = sumUpToN(600);
+console.log(result); // Output: 10
