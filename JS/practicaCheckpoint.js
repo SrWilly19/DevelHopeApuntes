@@ -13,4 +13,5 @@ function numerosMayoresQueSuIndice(array){
     return nuevaMatriz;
 }
 
-numerosMayoresQueSuIndice(array);
+//numerosMayoresQueSuIndice(array);
+console.log(numerosMayoresQueSuIndice(array))
