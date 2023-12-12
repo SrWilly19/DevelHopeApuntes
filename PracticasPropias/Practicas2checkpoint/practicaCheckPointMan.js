@@ -6,7 +6,8 @@ const people = [
     { id: 10, nombre: "Juan", edad: 31, ciudad: "Paris", pais: "Francia" },
 ];
 
-//1- Funciones Loops devolver números pares
+//1- Funciones Loops devolver números pares si quisieramos que fuera impar solo tendriamos que cambiar el 
+//0 por un 1
 const numPares = people.filter((num) => {
     return num.edad % 2 === 0;
 })
@@ -16,6 +17,14 @@ const numPares = people.filter((num) => {
 const personaMayor = people.sort((a,b) => b.edad - a.edad);
 const personaMayor2 = personaMayor.find ((person) => person === personaMayor[0])
 //console.log(personaMayor2);
+//LO MISMO PERO SIMPLIFICADO
+const personaMayorS = people.reduce((personaMayorS, personaActual) =>{
+    //Compara laas edades de acutal y mayor, si es actual es mayor sera true y devuelve actual
+    //Si es false la persona mayor seguira siendo la personaMayor y lo devolvera
+    //si es true se ejecuta ? si es false  lo que va detras de :
+    return (personaActual.edad > personaMayorS.edad) ? personaActual : personaMayor;
+});
+//Console.log(personasMayorS);
 
 //3- Fecth API de GitHub : según el usuario que se le pasa a la función para los repositorios que trae (https://api.github.com/users/)
 function obtenerRepositoriosDeUsuario(usuario){
@@ -90,6 +99,7 @@ function soloPropieNume(matriz){
 //7- Fetch: number api, agarrar un numero random y traer info de este numero random (http://numbersapi.com/$%7BrandomNumber%7D%60)
 
 function obtenerNumeroAleatrio(min, max){
+    //Math.floor redondea al numero entero hacia abajo
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
