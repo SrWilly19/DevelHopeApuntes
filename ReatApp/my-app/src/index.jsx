@@ -14,5 +14,5 @@ import { createRoot} from 'react-dom/client'
 createRoot(document.getElementById('root'))
     .render(<App/>)
 
-//Podemos usar este roo para representar algo dentro de nuestra pagina llamando al metodo de representacion en el objeto raiz.
+//Podemos usar este root para representar algo dentro de nuestra pagina llamando al metodo de representacion en el objeto raiz.
 root.render(helloWorldElement)
