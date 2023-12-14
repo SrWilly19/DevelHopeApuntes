@@ -8,7 +8,7 @@ export function App(){
         <div>
             <h1>My Awesome Application</h1>
             <hr />
-            <Welcome name="Arnau" age={24}/>
+            <Welcome name="Arnau" />
         </div>
     )
 }

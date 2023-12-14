@@ -1,3 +1,5 @@
+import { HelloWorld } from "./HelloWorld";
+
 export function Welcome({name, age}){
     /*Podriamos crear una variable de nombre "name" y podriamos establecer su valor en el valor del atributo props.name
     const name = props.name*/
@@ -14,10 +16,18 @@ export function Welcome({name, age}){
     porque en lugar de tener que acceder a props.name o props.algo mas cada vez que queramos acceder al valor de una propiedad simplemente podemos usar el nombre de
     la variable, ya que hemos desestructurado el objeto props de antemano */
     /*Modificaremos la expresion para poder pasarle tambien un componente de numeros como es la edad */
-    return <div>
-        <h2>Welcome, {name}!</h2>
-        <p>You are {age + 1} years old.</p>
+    return <div> 
+        {name ? <h2>Welcome, {name}!</h2> : <HelloWorld />}
+        {Boolean(age) && <p>You are {age} years old.</p>}
     </div>
+    /*Si ponemos los corchetes fuera "{}" rodeando nuestra expresion se denomina interpolar.  Estamos interpolando esta expresion para poder representarla condicionalmente
+    Si no tiene ninguna edad definida en App no saldra esa frase, sin embargo si tiene 0 años saldra un 0 en la pantalla ya que es valor falso pero tambien es un valor 
+    que react puede renderizar, ya que si creamos alguna app pueden ser muy utiles los 0, para solucionar esto debermos convertir el valor explicitamente a un valor booleano 
+    para poder tomar el valor de edad. La primera manera seria envolver nuestro age con el constructor Boolean(), convierte el valor a un booleano, la segunda manera seria 
+    utilizar la doble negacion para negar el valor dos veces, si niego dos veces un valor como este, la expresion se resuelve asi, primero JavaScript niega el valor cero, ahora el 
+    valor 0 negado es verdadero porque un valor negado falsamente se vuelve verdadero y define una puerta verdadera, que es la segunda cosa que hace JavaScript. Obtengo falso asi 
+    que nuevamente estoy negado el valor de la variable dos veces para que la primera vez se convierta en booleano y la segunda vez vuelva a su valor booleano original. Por
+    lo que 0 se vuelve verdadero y luego se vuelve falso porque el cero negado es falso es verdadero y verdadero negado es falso es mas facil de escribir pero mas DIFICIL DE LEER (!!age) */
     /*Accedemos al objeto props y con el .name accedemos al atributo de nombre del objeto props
     return <h2>Welcome, {props.name}!</h2>*/
     //return <h2>Welcome, {name}!</h2>
@@ -27,3 +37,6 @@ export function Welcome({name, age}){
     Puedo expandir el objeto props desde dentro de la declaracion de la funcion y puedo extraer el atributo de nombre del objeto props dentro de una varibale que 
     tiene lemismo nombre del atributo que, en este caso el nombre*/
 }
+
+/*El operador ternario: esta seria la manera de representarlo
+expr ? doThis(Si la expr se resulve de manera verdadera se hara esto) : doThat(Si la expr se resuelve de manera falsa se hara esto) */
