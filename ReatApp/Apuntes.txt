@@ -17,3 +17,36 @@ No podra llamar a un gancho una cantidad de veces que depende de la cantidad de 
 Los ganchos solo se pueden llamar desde dentro de un componente de funcion y tambien se pueden llamar dentro de ganchos personalizados.
 Se debe a que necesitan poder conectarse dentro de las partes internas de React
 Los ganchos son algo especifico de React y no son algo que pueda llamar fuera de React
+
+Una variable de estado puede  ser de cualquier tipo que queramos y puede tener cualqueir valor inicial que queramos por lo que podemos tener variables de estado que representen numeros,
+otras que representen cadenas, otras que representen objetos, matrices, lo que queramos.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+useStat:
+Es un enlace que nos permitira rastrear el valor de una sola variable de estado y nos permitira actualizarla.
+La funcion useState recibe el valor inicial de la varibale de estado como su unico parametro.
+Entonces le decimos a React que queremos crear una nueva varibale deestado llamando a useState y podemos pasar a React el valor inicial de esta varible de estado.
+Por ejemplo: 
+1-Le podriamos decir que nuestro contador debera comenzar desde 0 para que podamos pasarle el valor 0
+2-Nos devuelve una matriz. No es una matriz regular, es algo llamado tupla*.
+*Una tupla es una estructura de datos que e reprensta como un arreglo pero que contiene un numero especifico de elementos y cada uno de los elementos de este arreglo tiene
+un rol muy especifico, tiene un significado muy especifico. 
+3-Lo que devuelve es en realidad una tupla que contiene dos elementos. El primer elemento es el valor actual de la variable de estado y el segundo elemento es una funcion que podemos 
+llamar en cualquier momento para actualizar el valor de la variable de estado.
+4-El primer elemento de la matriz va dentro de la varibale de contador, el segundo elemento de la matriz va dentro de la variable setCounter. Sabemos que el primero es la variable de 
+estado y el segundo es la funcion que podemos utilizar para actualizar la variable de estado.
+Para actualizar el contador tendremos que utilizar la funcion de actualizacion que nos brinda React, por lo que
+Sintaxis:
+funtion handleCounterIncrement(){
+    //Esto solo lo podemos hacer una vez ya que React no actualiza el componente al momento si no que lo hace cuando puede, entonces si le metemos otro mas podria hacer el mismo incremento
+    //de 0 + 1. 
+    setCounter(counter + 1 )
+    //Si queremos hacerlo de otra manera en la que si que podran incrementar mas numeros de una vez, tendrimos que cambiar la Sintaxis
+    setCounter((c) => c + 1)
+    setCounter((c) => c + 1)
+    //De esta manera estamos cogiendo la variable y la estamos actualizando no estamos esperando a que react nos la actualize, de esta manera si podriamos duplicar esto. 
+    //Estamos cogiendo la variable mas reciente, por lo que si otra funcion la actualizado nosotros tendremos el valor inmediato que es en realidad el correcto
+}
+
+
+const [counter, setCounter] = useState(0)
