@@ -1,0 +1,19 @@
+Hooks ---- Ganchos
+Vamos a tener una vision general de lo que hacen estos ganchos que son los mas comunes
+
+useState: Es un gancho que nos permitira administrar el estado de un componente.
+useEffect: Es un gancho que nos permitira ejecutar efectos secundarios dentro de un componente. Nos permitira ejecutar acciones cada vez que ocurra algo.
+useContext: Nos permitira acceder al valor de un contexto 
+useRef: Nos permitira acceder a ciertos nodos DOM creados por React cada vez que muestre algo por pantalla
+useMemo: Es un gancho que nos permite memorizar el resultado de calculos costosos.
+
+Los ganchos siempre deben llamarse en el mismo numero y en el mismo orden desde dentro de un componente de funcion.
+Cuando usa un gancho, debe recordar que dentro de su componente de funcion, siempre debe llamar al mismo numero de ganchos y siempre debe llamar a los ganchos 
+que ha llamado en el mismo orden.
+Esto significa que solo podra llamar a ganchos desde el nivel superior de su componente de funcion, no podra llamar a ganchos, desde, por ejemplo, dentro de un controlador de eventos
+No podra llamar a ganchos desde dentro de una declaracion if
+No podra llamar a un gancho condicionalmente
+No podra llamar a un gancho una cantidad de veces que depende de la cantidad de elementos dentro de una matriz y nada de eso
+Los ganchos solo se pueden llamar desde dentro de un componente de funcion y tambien se pueden llamar dentro de ganchos personalizados.
+Se debe a que necesitan poder conectarse dentro de las partes internas de React
+Los ganchos son algo especifico de React y no son algo que pueda llamar fuera de React

@@ -19,6 +19,7 @@ export function Welcome({name, age}){
     return <div> 
         {name ? <h2>Welcome, {name}!</h2> : <HelloWorld />}
         {Boolean(age) && <p>You are {age} years old.</p>}
+        {age === 0 && <p>You are very young!</p>}
     </div>
     /*Si ponemos los corchetes fuera "{}" rodeando nuestra expresion se denomina interpolar.  Estamos interpolando esta expresion para poder representarla condicionalmente
     Si no tiene ninguna edad definida en App no saldra esa frase, sin embargo si tiene 0 años saldra un 0 en la pantalla ya que es valor falso pero tambien es un valor 

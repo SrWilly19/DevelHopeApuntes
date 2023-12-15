@@ -15,4 +15,4 @@ createRoot(document.getElementById('root'))
     .render(<App/>)
 
 //Podemos usar este root para representar algo dentro de nuestra pagina llamando al metodo de representacion en el objeto raiz.
-root.render(helloWorldElement)
+//root.render(helloWorldElement)
