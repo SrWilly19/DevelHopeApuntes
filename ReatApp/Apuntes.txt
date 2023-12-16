@@ -22,7 +22,7 @@ Una variable de estado puede  ser de cualquier tipo que queramos y puede tener c
 otras que representen cadenas, otras que representen objetos, matrices, lo que queramos.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-useStat:
+useState:
 Es un enlace que nos permitira rastrear el valor de una sola variable de estado y nos permitira actualizarla.
 La funcion useState recibe el valor inicial de la varibale de estado como su unico parametro.
 Entonces le decimos a React que queremos crear una nueva varibale deestado llamando a useState y podemos pasar a React el valor inicial de esta varible de estado.
@@ -50,3 +50,33 @@ funtion handleCounterIncrement(){
 
 
 const [counter, setCounter] = useState(0)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+useEffect:
+Este gancho nos permite ejecutar efectos secuandarios dentro de nuestros componentes, por lo tanto nos permite reaccionar al cambio dealgunas variables dentro de nuestro codigo
+Esta variable puede ser un accesorio, puede ser una varibale de estado, puede ser lo que quieras.
+Puedo ejecutar tantos useEffects como quiera dentro de mi componente
+Recibe dos parametros, el primer parametro es la funcion que queremos que se ejecute cada vez que algo cambie. El segundo parametro es una matriz de valores que queremos que reaccionene para monitorear
+Entonces cada vez que cambie cualquiera de estos valores dentro de la matriz, se ejecutara la funcion que le hemos pasado a useEffect como primer parametro
+Cuando cargamos la pagina por primera vez tambien nos enseña el mensaje con un 0, y esto se debe a que ejecuta la funcion no solo cuando cambia cualquiera de los valores dentro de esta matriz 
+Sino que tambien ejecuta la funcion tan pronto como el componente se procesa por primera vez
+Las condiciones para que se ejecute esta funcion son tan pronto como se monte o tan pronto como cambie cualquiera de los valerps dentro de esta matriz
+Le permite limpiar los efectos de un efecto secundario si el efecto secundario necesita alguna limpieza
+Cada vez quye tiene algo que se ejecuta y que puede seguir ejecutandose cada vez que se desmonta su componente, siempre debe recordar que debe limpiarlo usted mismo.
+Limpiar despues de usted mismo significa que necesita una forma de detener la ejecucion de esta operacion para evitar que se ejecute incluso cuando el componente se ha desmontado.
+useEffect es un gancho que recibe un efecto secundario que devuelve una funcion de limpieza
+La funcion de limpieza puede hacer lo que necesitemos para limpiar las operaciones que comenzamos cuando se ejecuto el efecto, podemos detener un intervalo usando la funcion clearInterval, que nuevamente
+es una funcion global disponible en la mayoria de los tiempos de ejecucion de JavaScript. La funcion clearInterval recibe un numero, un ID, que representa el intervalo que queremos borrar.¿Como obtenemos la
+ID  del intervalo que hemos creado aqui? setInterval es una funcion que devuelve el ID del intervalo que acaba de crear, simplemente podemos guardar este ID dentro de una variable. Puedo enviar este ID
+de intervalo a la funcion clearInterval para saber que cada vez que se limpia mi efecto, se destruye el intervalo. Asi que ahora la pregunta es ¿Cuando se limpia un efecto? Un efecto se limpia justo antes
+de que el componente este a punto de ser desmontado
+
+Primer parametro es el efecto, la funcion que queremos que se ejecute cuando algo suceda
+El segundo parametro es una matriz, entonces simplemente podemos crear una nueva matriz usando algunos parentesis cuadrados, y dentro de esta matriz podemos colocar todas las variables que queremos 
+que react observe para ejecutar el efecta cada vez que cambie una de estas variables. Puedo tener tantos valores como desee dentro de esta matriz
+useEffect(() => {console.log(`The value of the counter is ${counter}`)},[counter] )
+
+Si dejo mi matriz de dependencia vacia, puedo esperar que mi funcion se ejecute solo una vez tan pronto como se monte el componente
+useEffect(() => {
+    console.log(`I have been mounted`)
+}, [])
