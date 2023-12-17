@@ -80,3 +80,13 @@ Si dejo mi matriz de dependencia vacia, puedo esperar que mi funcion se ejecute 
 useEffect(() => {
     console.log(`I have been mounted`)
 }, [])
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+event.target: 
+Si paso el mouse sobre este elemento, puedo ver que el boton se resalta dentro de la pagina porque event.target es actualmnete, el valor de la propiedad event.target es actualmente una
+referencia al nodo DOM que reporesneta el boton en si 
+
+La diferencia entre el destino y el destino actual es que el destino represneta  que elemento ha activado el evento, mientras que el destino actual represneta el elemento al que se adjunto
+realmente el evento
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Preguntar como funciona lo de 
