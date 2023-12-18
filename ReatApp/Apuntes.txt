@@ -89,4 +89,27 @@ referencia al nodo DOM que reporesneta el boton en si
 La diferencia entre el destino y el destino actual es que el destino represneta  que elemento ha activado el evento, mientras que el destino actual represneta el elemento al que se adjunto
 realmente el evento
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-Preguntar como funciona lo de 
+Preguntar como funciona lo de event.stopPropagation();
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+FORMULARIOS:
+Los formularios se construyen utilizando componentes controlados o componentes no controlados:
+-Componente controlado: Es un componente que no mantiene un estado interno de su contenido, sino que depende del componente principal para proporcionarle el valor actual y notifica al
+principal tan pronto como el usuario intenta cambiarlo. ¿Que significa esta oracion? Significa que un componente controlado es un componente que recibe del padre el valor que necesita
+mostrar al usuario y notifica al padre tan pronto com el usuario intenta escribir algo del componente mismo, para interactuar con el valor contenido dentro el componente mismo.
+Entonces, un componente controlado es un componente que depende completamente del padre para mantener el estado y decirle lo que necesita mostrar dentro de el. Le ofrece un control 
+completo sobre lo que puede mostrar dentro de la entrada y lo que deberia suceder cuando el usuario interactua con la entrada.
+Este concepto se aplica a las entradas, pero tambien se puede aplicar a cualquier otro tipo de componente que escriba con React.
+Cualquier componente que en lugar de mantener un estado interno, dependa de informacion externa para mostrar algun contenido y notificar al componente principal tan pronto como el usuario
+interactue con este contenido puede considerarse un componente controlado.
+
+-Componente no controlado: Mantiene un estado interno del valor que contiene y no notifica a nadie cuando el usuario esta interactuando con este contenido. Puede notificar al padre cuando
+el usuario interactua con el contenido, pero no tiene que hacerlo. Es un componente que implementa por completo la logica necesaria para mantener su estado interno y actualizar su estado
+interno.
+Una entrada no controlada es una entrada que se usa tal cual y no recibe el valor que necesita para mostrarse como accesorio y no recibe un controlador de eventos cuando el usuario escribe
+algo dentro la entrada. Es un componente que no depende de un componente principal para mantener el estado, sino que mantiene el estado completamente dentro de si mismo. Son mas faciles 
+de usar porque no requieren que implemente una logica externa para mantener su estado, pero tambien ofrece menos personalizacion porque no puede decidir que se muestra dentro del 
+componente y que deberia suceder cuando el valor del componente cambia y eso se debe a que el componente en si mantiene el estado y no puede cambiar como se mantiene el estado dentro del 
+componente en si.
+
+Los componente controlados le ofrecen un mayor control a expensas de escribir mas codigo para manejarlois, mientras que los componentes no controlados son mas faciles de implementar porque
+no tiene que escribir tanto codigo para usarlos, pero tambien ofrecen menos controlo sobre los componentes controlados.
