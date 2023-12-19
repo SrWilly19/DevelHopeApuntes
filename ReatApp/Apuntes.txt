@@ -89,7 +89,7 @@ referencia al nodo DOM que reporesneta el boton en si
 La diferencia entre el destino y el destino actual es que el destino represneta  que elemento ha activado el evento, mientras que el destino actual represneta el elemento al que se adjunto
 realmente el evento
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-Preguntar como funciona lo de event.stopPropagation();
+Preguntar como funciona lo de event.stopPropagation(); RESPUESTA: ES ALGO QUE PROBABLEMENTE NO UTILICE EN MI VIDA
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 FORMULARIOS:
 Los formularios se construyen utilizando componentes controlados o componentes no controlados:
@@ -117,3 +117,28 @@ no tiene que escribir tanto codigo para usarlos, pero tambien ofrecen menos cont
 FORMULARIOS NO CONTROLADOS: 
 Son exactamente lo contrario de los formularios controlados porque los componentes no controlados son componentes que mantienen su propio estado y no dependen del padre para saber que deben
 mostrar y que sucede cuando el usuario intenta interactuar con ellos
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+REFS:
+useRef(null); Simplemente use nulo como el valor inicial de la referencia, devolvera un objeto, un objeto que contendra una sola clave llamada actual. Y podemos simplemente guardar este
+objeto dentro de una variable.
+const inputRef = userRef(null)
+
+Este gancho useEffect disparara un efecto secundario solo cuando el compoente se monte por primera vez. Y este efecto secundario simplemenete accedera a la referencia accediendo al 
+valor actual dentro de la referencia. Podemos usar un operador de encadenamiento opcional aqui, que solo ejecuta el codigo despues del signo de interrrogacion si la propiedad actual
+es diferente de nula o indefinida. Simplemente podemos llamar al metodo de enfoque en la referencia al nodo DOM, porque el metodo de enfoque es algo que tiene un puntero a un elemento de
+entrada
+Esto apuntara cada vez que recargue mi pagina a mi sitio de referencia que sera el username para que lo rellene el usuario
+Este es uno de los posibles usos de refs, que es usar refs para tener referencias directas a los nodos DOM para poder interactuar demanrea imperativa con estos nodos DOM
+    useEffect(() => {
+        inputRef.current?.focus()
+    }, [])
+
+Otro posible uso de refs es no usar refs para tener referencias direcatas a nodos DOM , sino usar refs para contener valores que persistiran entre un renderizado y el siguiente, pero
+que no haran que el componente se vuelva a renderizar cuando se actualicen. Entonces, si tengo un valor del que quiero realizar un seguimiento, pero no quiero que mi componente React se actualice
+cada vez que se cambie este valor, puedo usar una referencia para mantener este valor.
+Podemos crear una referencia para contener un valor que persisitira de un renderizado al siguiente y mantener dentro de este valor la informaciuon sobre si este componente ya estaba montado
+o no. Simplemente podemos crear una nueva referencia, a la que llamare referencia montada, que simplemente sera una referencia de usuario con un valor incial falso.
+
+Actualizar una referencia es diferente de actualizar una variable de estado porque, is bien la actualizacion de una variable de estado hace que el componente se vuelva a representar, la 
+actualizacion del valor contenido en una referencia no hace que el componente se vuelva a representar

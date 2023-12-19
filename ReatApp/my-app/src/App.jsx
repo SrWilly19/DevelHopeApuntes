@@ -18,6 +18,7 @@ export function App(){
             <AlertClock />
             <Counter />
             <MouseClicker />
+            <MyForm />
             <MyUncontrolledForm />
             <Clock />
         </div>

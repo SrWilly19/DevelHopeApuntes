@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 //Podemos crear una funcion que cree el estado incial y asi podremos llamarla tantas veces como queramos
 function createData(){
@@ -11,11 +11,11 @@ function createData(){
 
 
 export function MyForm(){
-    //Inicializamos la varible destado con uan cadena vacia y tomaremos la tupla que esta devolviendo useState y guardaremos tanto el nombre de usuario como la funcion setUsername dentro
+    //Inicializamos la varible destado con una cadena vacia y tomaremos la tupla que esta devolviendo useState y guardaremos tanto el nombre de usuario como la funcion setUsername dentro
     // de algunas variables.
     const [data,setData] = useState(createData())
    
-
+    const mountedRef = useRef(false)
     /*De alguna manera estoy vinculando el valor contenido en la entrada con el valor del nombre de usuario, pero, por supuesto, este es un enlace de datos unidireccional porque la entrada
     no puede cambiar directamente  el contenido de la variable del nombre de usuario, solo puede leer su valor, y mostrarselo al usuario.
     Para cambiar el valor de la variable de nombre de usuario, necesitamos usar la funcion setUsername, que es la funcion devuelta por el enlace useState que nos permite actualizar el valor
@@ -27,8 +27,29 @@ export function MyForm(){
     El evento onInput y onChange se comportan exactamente igual y probablemente veras que el evento onChange se usa con mas frecuencia, asi que por ahora te sugiero que uses el evento onChange
     aunque puedes usar el evento onInput si lo prefieres.
     */
+    /*Puede dejarlo vacio, por lo que no estara definido, pero le resultara util establecerlo en nulo, especialemnte mas adelante cuando intente trabajar con TypeScript 
+    1-Simplemente use nulo como el valor inicial de la referencia
+    2-Ahora necesitamos adjuntar ala referencia al elemento del que queremos obtener una referencia directa
+    Ahora sabemos que podemos usar el gancho useEffect para desencadenar un efecto en ciertos momentos especificos*/
+    const inputRef = useRef(null)
 
-    /*Recuerda que cunao llamas a la funcion para actualizar una variable de estado siempre necesitas decidir si le vas a pasar un valor inmediato o una devolucion de llamada
+    /*Este gancho useEffect disparara un efecto secundario solo cuando el compoente se monte por primera vez. Y este efecto secundario simplemenete accedera a la referencia accediendo al 
+    valor actual dentro de la referencia. Podemos usar un operador de encadenamiento opcional aqui, que solo ejecuta el codigo despues del signo de interrrogacion si la propiedad actual
+    es diferente de nula o indefinida. Simplemente podemos llamar al metodo de enfoque en la referencia al nodo DOM, porque el metodo de enfoque es algo que tiene un puntero a un elemento de
+    entrada*/
+
+    useEffect(() => {
+        if(!mountedRef.current){
+            mountedRef.current = true;
+            console.log('Mounting for the first time')
+        }else{
+            console.log('Mosunting again for debug puroposes')
+        }
+
+        inputRef.current?.focus()
+    }, [])
+
+    /*Recuerda que cuando llamas a la funcion para actualizar una variable de estado siempre necesitas decidir si le vas a pasar un valor inmediato o una devolucion de llamada
     y la forma en que decides esto es: Para preguntarse, ¿El siguiente valor de la varibale de estado depende del valor actual de la varibale de estado?*/
     function handleInputChange(event){
         //Puedo acceder a un componente como el nombre
@@ -80,10 +101,11 @@ export function MyForm(){
     No se suele utilizar un  div para juntar todo lo del formulario ya que tenemos un elemento dedicado a eso que seria el <form></form> y dentro de este pondremos todos los inputs y 
     botones que iran en nuestro formulario
     */
+
     return (
         <form onSubmit={handleLoginFormSubmit}>
             <h1>My Form</h1>
-            <input name="username" value={data.username} onChange={handleInputChange} />
+            <input ref={inputRef} name="username" value={data.username} onChange={handleInputChange} />
             <input name="password" type="password" value={data.password} onChange={handleInputChange} />
             <input name="session" type="checkbox" checked={data.session} onChange={handleInputChange} />
             <button type="submit" disabled={!data.username || !data.password} >Login</button>
