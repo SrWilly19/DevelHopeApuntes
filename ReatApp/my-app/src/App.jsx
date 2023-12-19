@@ -4,6 +4,7 @@ import { Counter } from "./Counter"
 import { HelloWorld } from "./HelloWorld"
 import { MouseClicker } from "./MouseClicker"
 import { MyForm } from "./MyForm"
+import { MyUncontrolledForm } from "./MyUncontrolledForm"
 import { Welcome } from "./Welcome"
 
 //Un componente debe devolver una expresion JSX, algo que permita que el componente se represente dentro de la aplicacion
@@ -17,7 +18,7 @@ export function App(){
             <AlertClock />
             <Counter />
             <MouseClicker />
-            <MyForm />
+            <MyUncontrolledForm />
             <Clock />
         </div>
     )

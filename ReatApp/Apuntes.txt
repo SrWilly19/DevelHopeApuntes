@@ -113,3 +113,7 @@ componente en si.
 
 Los componente controlados le ofrecen un mayor control a expensas de escribir mas codigo para manejarlois, mientras que los componentes no controlados son mas faciles de implementar porque
 no tiene que escribir tanto codigo para usarlos, pero tambien ofrecen menos controlo sobre los componentes controlados.
+
+FORMULARIOS NO CONTROLADOS: 
+Son exactamente lo contrario de los formularios controlados porque los componentes no controlados son componentes que mantienen su propio estado y no dependen del padre para saber que deben
+mostrar y que sucede cuando el usuario intenta interactuar con ellos

@@ -49,7 +49,7 @@ export function MyForm(){
         setData((data) => {
             return { 
                 ...data,
-                [name] : value === 'checked' ? checked : value,
+                [name] : type === 'checkbox' ? checked : value,
             }
             
         })
@@ -58,6 +58,12 @@ export function MyForm(){
 
     function handleResetForm(){
         setData(createData())
+    }
+
+    function handleLoginFormSubmit(event){
+        //El metodo predeterminado de prevencion es un metodo que esta presente en cada objeto de evento que evita elcomportamiento predeteminado para ese evento especifico
+        event.preventDefault()
+        console.log('Login button pressed', data)
     }
 
     /*console.log(username) esto nos hara ver en la consola lo que estamos escribiendo en el recuadro, tenemos acceso completo y total a los datos en cualquier punto dentro de nuestros
@@ -71,19 +77,21 @@ export function MyForm(){
     Cuando utilizamos casillas de verificacion siempre debemos recordar que una casilla de verificacion se comporta un poco diferente a otra entradas porque necesitaria marcar no el
     atributo de valor sino el  atributo marcado y esto solo sucede cuando el tipo es casilla de verificacion, no cuando el tipo es otra cosa. Para todos los demas tipos que va, use
     el valor, pero para las casillas de verificacion usara check it prop
-   */
+    No se suele utilizar un  div para juntar todo lo del formulario ya que tenemos un elemento dedicado a eso que seria el <form></form> y dentro de este pondremos todos los inputs y 
+    botones que iran en nuestro formulario
+    */
     return (
-        <div>
+        <form onSubmit={handleLoginFormSubmit}>
             <h1>My Form</h1>
             <input name="username" value={data.username} onChange={handleInputChange} />
             <input name="password" type="password" value={data.password} onChange={handleInputChange} />
             <input name="session" type="checkbox" checked={data.session} onChange={handleInputChange} />
-            <button disabled={!data.username || !data.password}>Login</button>
-            <button onClick={handleResetForm}>Reset</button>
+            <button type="submit" disabled={!data.username || !data.password} >Login</button>
+            <button type="button" onClick={handleResetForm}>Reset</button>
 
             <pre>
                 {JSON.stringify(data, null, 2)}
             </pre>
-        </div>
+        </form>
     )
 }
