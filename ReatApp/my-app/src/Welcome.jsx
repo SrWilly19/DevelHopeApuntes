@@ -1,6 +1,11 @@
 import { HelloWorld } from "./HelloWorld";
 
 export function Welcome({name, age}){
+    //estilo en linea
+    const WelcomeStyle = {
+        backgroundColor: name ? 'greenyellow' : 'darkgrey',
+        color: name ? '#333' : '#FFF',
+    }
     /*Podriamos crear una variable de nombre "name" y podriamos establecer su valor en el valor del atributo props.name
     const name = props.name*/
    
@@ -16,7 +21,7 @@ export function Welcome({name, age}){
     porque en lugar de tener que acceder a props.name o props.algo mas cada vez que queramos acceder al valor de una propiedad simplemente podemos usar el nombre de
     la variable, ya que hemos desestructurado el objeto props de antemano */
     /*Modificaremos la expresion para poder pasarle tambien un componente de numeros como es la edad */
-    return <div> 
+    return <div style={WelcomeStyle}> 
         {name ? <h2>Welcome, {name}!</h2> : <HelloWorld />}
         {Boolean(age) && <p>You are {age} years old.</p>}
         {age === 0 && <p>You are very young!</p>}

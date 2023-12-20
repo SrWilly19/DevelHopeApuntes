@@ -3,6 +3,7 @@ import { App } from "./App"
 //Debemos importar desde la biblioteca React DOM es una funcion llamada createRoot
 import { createRoot} from 'react-dom/client'
 
+import './index.scss'
 //Para poder usar el componente hello world definido en HelloWorld.jsx  debemos importarlo dentro de este archivo
 //Metemos nuestro componente Hello World dentro de esta const helloWorldElement
 //const helloWorldElement = <HelloWorld />

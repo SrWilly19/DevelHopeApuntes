@@ -142,3 +142,47 @@ o no. Simplemente podemos crear una nueva referencia, a la que llamare referenci
 
 Actualizar una referencia es diferente de actualizar una variable de estado porque, is bien la actualizacion de una variable de estado hace que el componente se vuelva a representar, la 
 actualizacion del valor contenido en una referencia no hace que el componente se vuelva a representar
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+RENDERING LISTS:
+El metodo map es un metodo que recibe una funcion de devolucion de llamada, que se ejecutara sobre cada uno de los elementos del arreglo, y transformara ese elemento como se especifica dentro
+de la funcion de devolucion de llamada. El valor de retorno del metodo del mapa sera una nueva matriz que contenga todos los elementos de la matriz original transformados como se especifica
+dentro de la funcion de devolucion de llamada.
+Podemos crear una nueva matriz que contenga todos los elementos de la matriz original duplicados en valor, por lo que la matriz doble, llamando al metodo de mapa en la matriz de numeros
+y pasando el metodo de mapa esta devolucion de llamada.
+Ejemplo:
+const number = [1, 2, 3, 4]
+const double = numbers.map((number, index) => number * 2)
+Y como puede ver, esta devolucion de llamada se ejecutara en cada elemento de la matriz original, y recibira el elemento sobre el que itera como primer parametro, y el indice del elemento
+sobre el que itera como segundo parametro. Y el valor que devuelve esta devolucion de llamada es el valor que se colocara  en el mismo indice del elemento en el que estamos iterando en 
+la matriz original dentro de la nueva matriz que se esta creando.
+Debes RECORDAR: que cada vez que llamamos a la funcion de mapa, creamos una nueva matriz que contiene los valores calculados mediante la aplicacion de la funcion de devolucion de llamada 
+a todos los elementos de la matriz original
+La matriz original, nunca se muta, por lo que la funcion de mapa no cambia el contenido de la matriz original, sino que crea una nueva matriz que contiene los elementos de la matriz original
+transformados por la funcion de devolucion de llamada que pasamos al mapa. ¿Como podemos usar este metodo dentro de react para generar listas de elementos?
+const names = ['Kate', 'Jane', 'John', 'Billy']
+const items = names.map((name) => <li>{name}</li>)
+Por supuesto, podemos tener una lista de cadenas, y podriamos querer representar esta lista de cadenas, esta matriz de cadenas, como algo mas.
+Es posible que uqeramos representar esta matriz de cadenas como una lista de elementos de lista, por lo tanto, etiquetas li. Y podemos transformar cada una de estas cadenas en un componente
+usando el metodo del mapa. Entones cuando el metodo del mapa itera sobre el primer elemento, la cadena Kate, recibira la cadena Kate dentro de la variable de nombre y devolvera un elemento 
+de lista que contiene la cadena Kate
+
+Cuando renderzamos listas en React, debemos recordar que cada uno de los elementos de la lista debe identificarse con un valor unico y estable. Unico se refiere a que no hay dos elementos
+dentro de la lista que tengan la misma clave, y estable significa que el mismo elemento siempre debe tener la misma clave, independiente de la posicion dentro de la matriz, porque las 
+matrices pueden cambiar su longitud, pero tambien se pueden ordenar, tambien se pueden reordenar.
+Podemos partir de la suposicion de que nunca habra dos elementos con el mismo valor dentro de esta matriz, por lo que podemos usar el valor del elemento en si como clave, de lo contrario, 
+podemos simplemente usar el indice del elemento dentro de la matriz, que, por supuesto, sera unico, pero nunca sera estable, porque si se reordenara la matriz, el mismo elemento tendria 
+una clave diferente porque tendria un indice diferente.
+const names = ['Kate', 'Jane', 'John', 'Billy', 'Jane']
+Si tuvieramos que reoprdenar esta matriz de elementos, el mismo indice que se uso antes para un elemento podria usars para otro elemento, entonces React podria confundirse con esto 
+RECUERDA! Si, la clave debe ser unica, pero la clave tambien debe ser estable de uin renderizado al siguiente, por lo que siempre debe estar asociado al mismo elemento.
+Lo mas probable es que renderice cosas que no sean listas de cadenas
+<MyList items={['Jane', 'John', 'Kate', 'Billy', 'Jane']}/>
+
+
+(((LOS OBJETOS NO SON VALIDOS COMO HIJOS DE REACT, NO PUEDE RENDERIZAR OBJETOS DIRECTAMENTE)))
+Debe colocar dentro de su expresion JSX solo las cosas que React sabe como representar y React sabe como representar cadenas, numeros etc.
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Cada vez que un componente este relacionado con otro componente y no espere a usar este componente en nignun otro lugar, puede ubicar este componente dentro del mismo archivo del 
+componente principal
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
